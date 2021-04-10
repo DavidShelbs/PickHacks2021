@@ -24,7 +24,7 @@
   </head>
   <body>
     <div id="container">
-      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth">
+      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
     </div>
     <div id="draggable" class="ui-widget-content">
     <script>
@@ -69,7 +69,7 @@
 										i++;
 								});
 								var ref = firebase.database().ref('image_locs');
-								ref.once('value').then(function(snapshot) {
+								ref.once('value').then(function(snapshot) {/
 										snapshot.forEach(function(childSnapshot) {
 											if (childSnapshot.key == title){
 												var coords = childSnapshot.val();
@@ -118,9 +118,9 @@
     <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 20%;">
   </div>
 
-  <div style="z-index:2; height: 84%; width: 24%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); padding: 50px; margin: 20px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span></span></div>
+  <div style="z-index:2; height: 84%; width: 26%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); padding: 50px; margin: 20px; margin-left: 60px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span></span></div>
 
-  <div style="z-index:4; height: 150px; width: 423px; padding: 50px; margin: 20px; margin-left:30px; margin-top: 80px; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span></span></div>
+  <div style="z-index:4; height: 150px; width: 423px; padding: 50px; margin: 20px; margin-left: 89px; margin-top: 80px; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span></span></div>
 
   <map name="pokearth">
     <area href="#" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokemon HQ Laboratory" onclick="calculateDistance(pkmhhqlab)" id="pkmhhqlab">

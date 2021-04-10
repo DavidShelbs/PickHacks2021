@@ -24,6 +24,51 @@ body {
   height: 200px;
 }
 
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden
+}
+input[type=range] {
+  width: 450px;
+  padding-left: 8%;
+  margin: 13.8px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background: #000000;
+  border: 0.2px solid #010101;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  margin-top: -14px;
+  width: 16px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #0d0d0d;
+}
+input[type=range]::-moz-range-track {
+  background: #000000;
+  border: 0.2px solid #010101;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+}
+
 
 /*#bottom{
     background-image: url(static/img/pokearth.png);
