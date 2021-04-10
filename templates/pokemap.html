@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Draggable - Default functionality</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script type="text/javascript" src="static/js/google_auth.js"></script>
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <style>
       #draggable { width: 0px; height: 0; padding: -1em; }
@@ -19,13 +23,93 @@
     </script>
   </head>
   <body>
-  
+
   <center>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" height="850">
     </div>
     <div id="draggable" class="ui-widget-content">
-      <img src="static/img/location1.jpeg" onclick="enlargeImg()" id="overlay_image"/>
+      <script>
+        const config = {
+          apiKey: "AIzaSyDp9mGuQY_bP3P8dTjbyKOrjke-hyo4eAg",
+          authDomain: "pickhacks2021.firebaseapp.com",
+          databaseURL: "https://pickhacks2021-default-rtdb.firebaseio.com",
+          projectId: "pickhacks2021",
+          storageBucket: "pickhacks2021.appspot.com",
+          messagingSenderId: "772315144443",
+          appId: "1:772315144443:web:4f3221964df004d27dd05e",
+          measurementId: "G-X45W2P7QR5"
+        };
+
+        firebase.initializeApp(config);
+        function initApp(getStatic) {
+          if( typeof initApp.counter == 'undefined' ) {
+            initApp.counter = 0;
+          }
+          if (!getStatic) {
+            initApp.counter++;
+            firebase.auth().onAuthStateChanged(function(user) {
+              if (user) {
+                console.log("working");
+                const numberOfUsers = 54;
+                const randomIndex = Math.floor(Math.random() * numberOfUsers);
+                var title;
+                var ref = firebase.database().ref('image_keys');
+                ref.once('value').then(function(snapshot) {
+                    var i = 0;
+                    snapshot.forEach(function(childSnapshot) {
+                      if (i == randomIndex){
+                        var image = childSnapshot.val();
+                        title = childSnapshot.key;
+                        var img_tag = document.createElement('img');
+                        img_tag.src = "static/img/" + image;
+                        img_tag.onclick = "enlargeImg()";
+                        img_tag.id = "overlay_image";
+                        img_tag.alt = title;
+                        document.getElementById('draggable').appendChild(img_tag);
+                      }
+                      i++;
+                  });
+                  var ref = firebase.database().ref('image_locs');
+                  ref.once('value').then(function(snapshot) {
+                      snapshot.forEach(function(childSnapshot) {
+                        if (childSnapshot.key == title){
+                          var coords = childSnapshot.val();
+                          firebase.database().ref().child("sessions/" + user.uid + "/" + initApp.counter).set({
+                            "title": title,
+                            "coords": coords
+                          });
+                        }
+                    });
+                  });
+                });
+              }
+            });
+          }
+          else {
+            return initApp.counter
+          }
+        }
+
+        window.onload = function() {
+          initApp(false);
+        };
+
+        function calculateDistance(e) {
+          ecoords = e.coords.split(',')
+          ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
+          ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
+          goalcoords = [19, 67, 27, 74]
+          gx = (goalcoords[2] + goalcoords[0])/2
+          gy = (goalcoords[3] + goalcoords[1])/2
+          var counter = initApp(true);
+          var user = firebase.auth().currentUser
+          firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
+            "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+          });
+        }
+
+      </script>
     </div>
   </center>
 
@@ -50,7 +134,7 @@
     <area href="#" target="_parent" shape="rect" coords="151, 109, 159, 124" title="Phenac City" onclick="calculateDistance(phenaccity2)" id="phenaccity2">
     <area href="#" target="_parent" shape="rect" coords="177, 104, 185, 112" title="Outskirt Stand" onclick="calculateDistance(outskirtstand)" id="outskirtstand">
     <area href="#" target="_parent" shape="rect" coords="179, 52, 187, 60" title="Snagem Hideout" onclick="calculateDistance(snagemhideout)" id="snagemhideout">
-    
+
     <area href="#" target="_parent" shape="rect" coords="939, 180, 954, 188" title="Chicole Village" onclick="calculateDistance(chicolevillage)" id="chicolevillage">
     <area href="#" target="_parent" shape="rect" coords="939, 146, 947, 161" title="Veintown" onclick="calculateDistance(veintown)" id="veintown">
     <area href="#" target="_parent" shape="rect" coords="967, 146, 975, 161" title="Ranger School" onclick="calculateDistance(rangerschool)" id="rangerschool">
@@ -87,7 +171,7 @@
     <area href="#" target="_parent" shape="rect" coords="979, 76, 987, 107" title="Chroma Road" onclick="calculateDistance(ChromaRoad2)" id="ChromaRoad2">
     <area href="#" target="_parent" shape="rect" coords="979, 76, 1025, 84" title="Chroma Road" onclick="calculateDistance(ChromaRoad3)" id="ChromaRoad3">
     <area href="#" target="_parent" shape="rect" coords="1078, 187, 1086, 195" title="Haruba Desert" onclick="calculateDistance(HarubaDesert)" id="HarubaDesert">
-    
+
     <area href="#" target="_parent" shape="rect" coords="630, 114, 638, 186" title="Ring Town" onclick="calculateDistance(ringtown)" id="ringtown">
     <area href="#" target="_parent" shape="rect" coords="647, 122, 655, 128" title="Kisara Plains" onclick="calculateDistance(kisaraplains)" id="kisaraplains">
     <area href="#" target="_parent" shape="rect" coords="631, 94, 637, 102" title="Lyra Forest" onclick="calculateDistance(lyraforest)" id="lyraforest">
@@ -109,7 +193,7 @@
     <area href="#" target="_parent" shape="rect" coords="693, 36, 701, 43" title="Sekra Range" onclick="calculateDistance(sekrarange)" id="sekrarange">
     <area href="#" target="_parent" shape="rect" coords="685, 19, 691, 27" title="Go-Rock Squad Base" onclick="calculateDistance(gorocksquadbase)" id="gorocksquadbase">
     <area href="#" target="_parent" shape="rect" coords="704, 19, 710, 27" title="Fiore Temple" onclick="calculateDistance(fioretemple)" id="fioretemple">
-    
+
     <area href="#" target="_parent" shape="rect" coords="871, 582, 879, 590" title="Twinleaf Town" onclick="calculateDistance(twinleaftown)" id="twinleaftown">
     <area href="#" target="_parent" shape="rect" coords="857, 568, 872, 583" title="Lake Verity" onclick="calculateDistance(lakeverity)" id="lakeverity">
     <area href="#" target="_parent" shape="rect" coords="885, 575, 893, 583" title="Sandgem Town" onclick="calculateDistance(sandgemtown)" id="sandgemtown">
@@ -152,8 +236,8 @@
     <area href="#" target="_parent" shape="rect" coords="1046, 442, 1054, 500" title="Seabreak Path" onclick="calculateDistance(seabreakpath)" id="seabreakpath">
     <area href="#" target="_parent" shape="rect" coords="1046, 434, 1054, 442" title="Flower Paradise" onclick="calculateDistance(flowerparadise)" id="flowerparadise">
     <area href="#" target="_parent" shape="rect" coords="1011, 442, 1019, 448" title="Stark Mountain" onclick="calculateDistance(starkmountain)" id="starkmountain">
-    
-    
+
+
     <area href="#" target="_parent" shape="rect" coords="873, 575, 885, 583" title="Route 201" onclick="calculateDistance(route201)" id="route201">
     <area href="#" target="_parent" shape="rect" coords="885, 569, 893, 575" title="Route 202" onclick="calculateDistance(route202)" id="route202">
     <area href="#" target="_parent" shape="rect" coords="893, 554, 906, 562" title="Route 203" onclick="calculateDistance(route203)" id="route203">
@@ -189,7 +273,7 @@
     <area href="#" target="_parent" shape="rect" coords="1018, 463, 1026, 485" title="Route 228" onclick="calculateDistance(route228)" id="route228">
     <area href="#" target="_parent" shape="rect" coords="1018, 484, 1033, 492" title="Route 229" onclick="calculateDistance(route229)" id="route229">
     <area href="#" target="_parent" shape="rect" coords="997, 484, 1018, 492" title="Route 230" onclick="calculateDistance(route230)" id="route230">
-    
+
     <area href="#" target="_parent" shape="rect" coords="57, 525, 65, 533" title="Littleroot Town" onclick="calculateDistance(littleroottown)" id="littleroottown">
     <area href="#" target="_parent" shape="rect" coords="57, 500, 65, 508" title="Oldale Town" onclick="calculateDistance(oldaletown)" id="oldaletown">
     <area href="#" target="_parent" shape="rect" coords="30, 500, 45, 508" title="Petalburg City" onclick="calculateDistance(petalburgcity)" id="petalburgcity">
@@ -210,7 +294,7 @@
     <area href="#" target="_parent" shape="rect" coords="268, 508, 276, 522" title="Evergrande City" onclick="calculateDistance(evergrandecity)" id="evergrandecity">
     <area href="#" target="_parent" shape="rect" coords="221, 552, 237, 570" title="Battle Frontier" onclick="calculateDistance(battlefrontier2)" id="battlefrontier2">
     <area href="#" target="_parent" shape="rect" coords="268, 575, 280, 586" title="Southern Island" onclick="calculateDistance(southernisland)" id="southernisland">
-    
+
     <area href="#" target="_parent" shape="rect" coords="57, 508, 65, 525" title="Route 101" onclick="calculateDistance(route101)" id="route101">
     <area href="#" target="_parent" shape="rect" coords="45, 500, 57, 508" title="Route 102" onclick="calculateDistance(route102)" id="route102">
     <area href="#" target="_parent" shape="rect" coords="57, 493, 85, 501" title="Route 103" onclick="calculateDistance(route103)" id="route103">
@@ -249,7 +333,7 @@
     <area href="#" target="_parent" shape="rect" coords="153, 525, 172, 533" title="Route 132" onclick="calculateDistance(route132)" id="route132">
     <area href="#" target="_parent" shape="rect" coords="131, 525, 153, 533" title="Route 133" onclick="calculateDistance(route133)" id="route133">
     <area href="#" target="_parent" shape="rect" coords="100, 525, 131, 533" title="Route 134" onclick="calculateDistance(route134)" id="route134">
-  
+
     <area href="#" target="_parent" shape="rect" coords="418, 452, 426, 460" title="One Island" onclick="calculateDistance(oneisland)" id="oneisland">
     <area href="#" target="_parent" shape="rect" coords="418, 460, 428, 481" title="Treasure Beach" onclick="calculateDistance(treasurebeach)" id="treasurebeach">
     <area href="#" target="_parent" shape="rect" coords="426, 420, 436, 461" title="Kindle Road" onclick="calculateDistance(kindleroad)" id="kindleroad">
@@ -282,7 +366,7 @@
     <area href="#" target="_parent" shape="rect" coords="458, 779, 468, 804" title="Sevault Canyon" onclick="calculateDistance(sevaultcanyon)" id="sevaultcanyon">
     <area href="#" target="_parent" shape="rect" coords="434, 803, 492, 813" title="Tanoby Ruins" onclick="calculateDistance(tanobyruins)" id="tanobyruins">
     <area href="#" target="_parent" shape="rect" coords="550, 805, 568, 824" title="Birth Island" onclick="calculateDistance(birthisland)" id="birthisland>
-    
+
     <area href="#" target="_parent" shape="rect" coords="384, 290, 392, 298" title="New Bark Town" onclick="calculateDistance(newbarktown)" id="newbarktown">
     <area href="#" target="_parent" shape="rect" coords="346, 290, 354, 298" title="Cherrygrove City" onclick="calculateDistance(cherrygrovecity)" id="cherrygrovecity">
     <area href="#" target="_parent" shape="rect" coords="330, 241, 338, 249" title="Violet City" onclick="calculateDistance(violetcity)" id="violetcity">
@@ -308,7 +392,7 @@
     <area href="#" target="_parent" shape="rect" coords="237, 274, 245, 282" title="Safari Zone" onclick="calculateDistance(safarizone)" id="safarizone">
     <area href="#" target="_parent" shape="rect" coords="250, 232, 258, 240" title="Battle Frontier" onclick="calculateDistance(battlefrontier)" id="battlefrontier">
     <area href="#" target="_parent" shape="rect" coords="362, 26, 370, 34" title="Sinjoh Ruins" onclick="calculateDistance(sinjohruins)" id="sinjohruins">
-    
+
     <area href="#" target="_parent" shape="rect" coords="354, 289, 385, 299" title="Route 29" onclick="calculateDistance(route29)" id="route29">
     <area href="#" target="_parent" shape="rect" coords="345, 249, 355, 290" title="Route 30" onclick="calculateDistance(route30)" id="route30">
     <area href="#" target="_parent" shape="rect" coords="338, 240, 356, 250" title="Route 31" onclick="calculateDistance(route31)" id="route31">
@@ -329,7 +413,7 @@
     <area href="#" target="_parent" shape="rect" coords="370, 259, 380, 290" title="Route 46" onclick="calculateDistance(route46)" id="route46">
     <area href="#" target="_parent" shape="rect" coords="236, 285, 248, 292" title="Route 47" onclick="calculateDistance(route47)" id="route47">
     <area href="#" target="_parent" shape="rect" coords="236, 281, 246, 286" title="Route 48" onclick="calculateDistance(route48)" id="route48">
-    
+
     <area href="#" target="_parent" shape="rect" coords="447, 285, 455, 293" title="Pallet Town" onclick="calculateDistance(pallettown)" id="pallettown">
     <area href="#" target="_parent" shape="rect" coords="447, 258, 455, 273" title="Viridian City" onclick="calculateDistance(viridiancity)" id="viridiancity">
     <area href="#" target="_parent" shape="rect" coords="447, 245, 455, 253" title="Viridian Forest" onclick="calculateDistance(viridianforest)" id="viridianforest">
@@ -351,7 +435,7 @@
     <area href="#" target="_parent" shape="rect" coords="422, 229, 429, 237" title="Victory Road" onclick="calculateDistance(victoryroad2)" id="victoryroad2">
     <area href="#" target="_parent" shape="rect" coords="422, 220, 430, 228" title="Indigo Plateau" onclick="calculateDistance(indigoplateau)" id="indigoplateau">
     <area href="#" target="_parent" shape="rect" coords="401, 290, 409, 298" title="Tohjo Falls" onclick="calculateDistance(tohjofalls)" id="tohjofalls">
-    
+
     <area href="#" target="_parent" shape="rect" coords="446, 273, 456, 285" title="Route 1" onclick="calculateDistance(route1)" id="route1">
     <area href="#" target="_parent" shape="rect" coords="446, 244, 456, 258" title="Route 2" onclick="calculateDistance(route2)" id="route2">
     <area href="#" target="_parent" shape="rect" coords="462, 228, 488, 238" title="Route 3" onclick="calculateDistance(route3)" id="route3">
@@ -380,9 +464,9 @@
     <area href="#" target="_parent" shape="rect" coords="422, 269, 432, 299" title="Route 26" onclick="calculateDistance(route26)" id="route26">
     <area href="#" target="_parent" shape="rect" coords="392, 269, 422, 299" title="Route 27" onclick="calculateDistance(route27)" id="route27">
     <area href="#" target="_parent" shape="rect" coords="407, 260, 423, 270" title="Route 28" onclick="calculateDistance(route28)" id="route28">
-    
+
     <area href="#" target="_parent" shape="rect" coords="833, 344, 841, 352" title="Mitonga Island - Daybreak Ruins" onclick="calculateDistance(daybreakruins)" id="daybreakruins">
-    
+
     <area href="#" target="_parent" shape="rect" coords="665, 447, 673, 454" title="Dolce Island - Southern Beach" onclick="calculateDistance(southernbeach)" id="southernbeach">
     <area href="#" target="_parent" shape="rect" coords="665, 439, 673, 445" title="Dolce Island - Hill" onclick="calculateDistance(hill)" id="hill">
     <area href="#" target="_parent" shape="rect" coords="673, 439, 681, 445" title="Dolce Island - Eastern Beach" onclick="calculateDistance(easternbeach)" id="easternbeach">
@@ -425,16 +509,7 @@
     </map>
 
     <script>
-      function calculateDistance(e) {
-        ecoords = e.coords.split(',')
-        ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
-        ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
-        goalcoords = [19, 67, 27, 74]
-        gx = (goalcoords[2] + goalcoords[0])/2
-        gy = (goalcoords[3] + goalcoords[1])/2
-        // console.log(ecoords, goalcoords)
-        console.log(Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0))
-      }
+
     </script>
 
     <script>
@@ -446,7 +521,7 @@
         img.style.transform = "scale(2)";
         // img.style.transform = "translateX(-50px)";
         // img.style.transform = "translateY(-50px)";
-        // Animation effect 
+        // Animation effect
         img.style.transition = "transform 0.25s ease";
       }
       // Function to reset image size
@@ -459,4 +534,3 @@
 
   </body>
 </html>
-
