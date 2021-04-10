@@ -99,14 +99,19 @@
           ecoords = e.coords.split(',')
           ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
           ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
-          goalcoords = [19, 67, 27, 74]
-          gx = (goalcoords[2] + goalcoords[0])/2
-          gy = (goalcoords[3] + goalcoords[1])/2
           var counter = initApp(true);
           var user = firebase.auth().currentUser
-          firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
-            "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+          var ref = firebase.database().ref("sessions/" + user.uid + "/" + counter + "/coords");
+          ref.once('value').then(function(snapshot) {
+            var coords = snapshot.val();
+            goalcoords = coords.split(',')
+            gx = (Number(goalcoords[2]) + Number(goalcoords[0]))/2
+            gy = (Number(goalcoords[3]) + Number(goalcoords[1]))/2
+            firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
+              "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+            });
           });
+          initApp(false);
         }
 
       </script>
