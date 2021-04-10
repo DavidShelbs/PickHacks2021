@@ -1,0 +1,18 @@
+#container {
+  position: relative;
+  width: 850;
+  height: 850;
+}
+
+/* #main_image {
+  width: 100%;
+  height: 100%;
+} */
+
+#overlay_image {
+  position: absolute;
+  bottom: 20px;
+  right: 300px;
+  width: 200px;
+  height: 200px;
+}
