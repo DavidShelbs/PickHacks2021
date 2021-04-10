@@ -21,16 +21,16 @@ ref = db.reference()
 #         line.split(',')[0]: line.split(',')[1].replace('https://', '').replace('/', '-')[:-1]
 #     })
 
-file = open('pokedata')
-lines = file.readlines()
-for line in lines:
-    image_key_ref = ref.child('image_locs')
-    key = ' '.join(line.split(' ')[4:])[:-1].replace('.', '')
-    value = ','.join(line.split(' ')[:4])
-    print(key, value)
-    image_key_ref.update({
-        key: value
-    })
+# file = open('pokedata')
+# lines = file.readlines()
+# for line in lines:
+#     image_key_ref = ref.child('image_locs')
+#     key = ' '.join(line.split(' ')[4:])[:-1].replace('.', '')
+#     value = ','.join(line.split(' ')[:4])
+#     print(key, value)
+#     image_key_ref.update({
+#         key: value
+#     })
 
 app = Flask(__name__)
 
@@ -41,7 +41,7 @@ def home():
 @app.route('/pokemap.html')
 def pokemap():
     return render_template('pokemap.html')
-    
+
 @app.route('/game.html')
 def game():
 	return render_template('game.html')
