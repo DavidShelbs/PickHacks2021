@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Draggable - Default functionality</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
     <style>
       #draggable { width: 0px; height: 0; padding: -1em; }
@@ -19,13 +22,41 @@
     </script>
   </head>
   <body>
-  
+
   <center>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" height="850">
     </div>
     <div id="draggable" class="ui-widget-content">
-      <img src="static/img/location1.jpeg" onclick="enlargeImg()" id="overlay_image"/>
+      <img src="" onclick="enlargeImg()" id="overlay_image"/>
+      <script>
+          const config = {
+          apiKey: "AIzaSyDp9mGuQY_bP3P8dTjbyKOrjke-hyo4eAg",
+          authDomain: "pickhacks2021.firebaseapp.com",
+          databaseURL: "https://pickhacks2021-default-rtdb.firebaseio.com",
+          projectId: "pickhacks2021",
+          storageBucket: "pickhacks2021.appspot.com",
+          messagingSenderId: "772315144443",
+          appId: "1:772315144443:web:4f3221964df004d27dd05e",
+          measurementId: "G-X45W2P7QR5"
+        };
+        firebase.initializeApp(config);
+        const numberOfUsers = 54;
+        const randomIndex = Math.floor(Math.random() * numberOfUsers);
+
+        var ref = firebase.database().ref('image_keys');
+        ref.once('value').then(function(snapshot) {
+            var i = 0;
+            snapshot.forEach(function(childSnapshot) {
+              if (i == randomIndex){
+                var image = childSnapshot.val();
+                document.getElementById("overlay_image").src="static/img/" + image;
+                console.log(image)
+              }
+              i++;
+          });
+        });
+      </script>
     </div>
   </center>
 
@@ -50,7 +81,7 @@
       <area href="#" target="_parent" shape="rect" coords="151, 109, 159, 124" title="Phenac City" onclick="calculateDistance(phenaccity2)" id="phenaccity2">
       <area href="#" target="_parent" shape="rect" coords="177, 104, 185, 112" title="Outskirt Stand" onclick="calculateDistance(outskirtstand)" id="outskirtstand">
       <area href="#" target="_parent" shape="rect" coords="179, 52, 187, 60" title="Snagem Hideout" onclick="calculateDistance(snagemhideout)" id="snagemhideout">
-      
+
       <area href="/pokearth/almia/chicolevillage.shtml" target="_parent" shape="rect" coords="939, 180, 954, 188" title="Chicole Village">
       <area href="/pokearth/almia/veintown.shtml" target="_parent" shape="rect" coords="939, 146, 947, 161" title="Veintown">
       <area href="/pokearth/almia/rangerschool.shtml" target="_parent" shape="rect" coords="967, 146, 975, 161" title="Ranger School">
@@ -87,7 +118,7 @@
       <area href="/pokearth/almia/chromaroad.shtml" target="_parent" shape="rect" coords="979, 76, 987, 107" title="Chroma Road">
       <area href="/pokearth/almia/chromaroad.shtml" target="_parent" shape="rect" coords="979, 76, 1025, 84" title="Chroma Road">
       <area href="/pokearth/almia/harubadesert.shtml" target="_parent" shape="rect" coords="1078, 187, 1086, 195" title="Haruba Desert">
-      
+
       <area href="/pokearth/fiore/ringtown.shtml" target="_parent" shape="rect" coords="630, 114, 638, 186" title="Ring Town">
       <area href="/pokearth/fiore/kisaraplains.shtml" target="_parent" shape="rect" coords="647, 122, 655, 128" title="Kisara Plains">
       <area href="/pokearth/fiore/lyraforest.shtml" target="_parent" shape="rect" coords="631, 94, 637, 102" title="Lyra Forest">
@@ -109,7 +140,7 @@
       <area href="/pokearth/fiore/sekrarange.shtml" target="_parent" shape="rect" coords="693, 36, 701, 43" title="Sekra Range">
       <area href="/pokearth/fiore/go-rocksquadbase.shtml" target="_parent" shape="rect" coords="685, 19, 691, 27" title="Go-Rock Squad Base">
       <area href="/pokearth/fiore/fioretemple.shtml" target="_parent" shape="rect" coords="704, 19, 710, 27" title="Fiore Temple">
-      
+
       <area href="/pokearth/sinnoh/twinleaftown.shtml" target="_parent" shape="rect" coords="871, 582, 879, 590" title="Twinleaf Town">
       <area href="/pokearth/sinnoh/lakeverity.shtml" target="_parent" shape="rect" coords="857, 568, 872, 583" title="Lake Verity">
       <area href="/pokearth/sinnoh/sandgemtown.shtml" target="_parent" shape="rect" coords="885, 575, 893, 583" title="Sandgem Town">
@@ -152,8 +183,8 @@
       <area href="/pokearth/sinnoh/seabreakpath.shtml" target="_parent" shape="rect" coords="1046, 442, 1054, 500" title="Seabreak Path">
       <area href="/pokearth/sinnoh/flowerparadise.shtml" target="_parent" shape="rect" coords="1046, 434, 1054, 442" title="Flower Paradise">
       <area href="/pokearth/sinnoh/starkmountain.shtml" target="_parent" shape="rect" coords="1011, 442, 1019, 448" title="Stark Mountain">
-      
-      
+
+
       <area href="/pokearth/sinnoh/route201.shtml" target="_parent" shape="rect" coords="873, 575, 885, 583" title="Route 201">
       <area href="/pokearth/sinnoh/route202.shtml" target="_parent" shape="rect" coords="885, 569, 893, 575" title="Route 202">
       <area href="/pokearth/sinnoh/route203.shtml" target="_parent" shape="rect" coords="893, 554, 906, 562" title="Route 203">
@@ -189,7 +220,7 @@
       <area href="/pokearth/sinnoh/route228.shtml" target="_parent" shape="rect" coords="1018, 463, 1026, 485" title="Route 228">
       <area href="/pokearth/sinnoh/route229.shtml" target="_parent" shape="rect" coords="1018, 484, 1033, 492" title="Route 229">
       <area href="/pokearth/sinnoh/route230.shtml" target="_parent" shape="rect" coords="997, 484, 1018, 492" title="Route 230">
-      
+
       <area href="/pokearth/hoenn/littleroottown.shtml" target="_parent" shape="rect" coords="57, 525, 65, 533" title="Littleroot Town">
       <area href="/pokearth/hoenn/oldaletown.shtml" target="_parent" shape="rect" coords="57, 500, 65, 508" title="Oldale Town">
       <area href="/pokearth/hoenn/petalburgcity.shtml" target="_parent" shape="rect" coords="30, 500, 45, 508" title="Petalburg City">
@@ -210,7 +241,7 @@
       <area href="/pokearth/hoenn/evergrandecity.shtml" target="_parent" shape="rect" coords="268, 508, 276, 522" title="Evergrande City">
       <area href="/pokearth/hoenn/battlefrontier.shtml" target="_parent" shape="rect" coords="221, 552, 237, 570" title="Battle Frontier">
       <area href="/pokearth/hoenn/southernisland.shtml" target="_parent" shape="rect" coords="268, 575, 280, 586" title="Southern Island">
-      
+
       <area href="/pokearth/hoenn/route101.shtml" target="_parent" shape="rect" coords="57, 508, 65, 525" title="Route 101">
       <area href="/pokearth/hoenn/route102.shtml" target="_parent" shape="rect" coords="45, 500, 57, 508" title="Route 102">
       <area href="/pokearth/hoenn/route103.shtml" target="_parent" shape="rect" coords="57, 493, 85, 501" title="Route 103">
@@ -249,7 +280,7 @@
       <area href="/pokearth/hoenn/route132.shtml" target="_parent" shape="rect" coords="153, 525, 172, 533" title="Route 132">
       <area href="/pokearth/hoenn/route133.shtml" target="_parent" shape="rect" coords="131, 525, 153, 533" title="Route 133">
       <area href="/pokearth/hoenn/route134.shtml" target="_parent" shape="rect" coords="100, 525, 131, 533" title="Route 134">
-    
+
       <area href="/pokearth/kanto/oneisland.shtml" target="_parent" shape="rect" coords="418, 452, 426, 460" title="One Island">
       <area href="/pokearth/kanto/treasurebeach.shtml" target="_parent" shape="rect" coords="418, 460, 428, 481" title="Treasure Beach">
       <area href="/pokearth/kanto/kindleroad.shtml" target="_parent" shape="rect" coords="426, 420, 436, 461" title="Kindle Road">
@@ -282,7 +313,7 @@
       <area href="/pokearth/kanto/sevaultcanyon.shtml" target="_parent" shape="rect" coords="458, 779, 468, 804" title="Sevault Canyon">
       <area href="/pokearth/kanto/tanobyruins.shtml" target="_parent" shape="rect" coords="434, 803, 492, 813" title="Tanoby Ruins">
       <area href="/pokearth/kanto/birthisland.shtml" target="_parent" shape="rect" coords="550, 805, 568, 824" title="Birth Island">
-      
+
       <area href="/pokearth/johto/newbarktown.shtml" target="_parent" shape="rect" coords="384, 290, 392, 298" title="New Bark Town">
       <area href="/pokearth/johto/cherrygrovecity.shtml" target="_parent" shape="rect" coords="346, 290, 354, 298" title="Cherrygrove City">
       <area href="/pokearth/johto/violetcity.shtml" target="_parent" shape="rect" coords="330, 241, 338, 249" title="Violet City">
@@ -308,7 +339,7 @@
       <area href="/pokearth/johto/safarizone.shtml" target="_parent" shape="rect" coords="237, 274, 245, 282" title="Safari Zone">
       <area href="/pokearth/johto/battlefrontier.shtml" target="_parent" shape="rect" coords="250, 232, 258, 240" title="Battle Frontier">
       <area href="/pokearth/johto/sinjohruins.shtml" target="_parent" shape="rect" coords="362, 26, 370, 34" title="Sinjoh Ruins">
-      
+
       <area href="/pokearth/johto/route29.shtml" target="_parent" shape="rect" coords="354, 289, 385, 299" title="Route 29">
       <area href="/pokearth/johto/route30.shtml" target="_parent" shape="rect" coords="345, 249, 355, 290" title="Route 30">
       <area href="/pokearth/johto/route31.shtml" target="_parent" shape="rect" coords="338, 240, 356, 250" title="Route 31">
@@ -329,7 +360,7 @@
       <area href="/pokearth/johto/route46.shtml" target="_parent" shape="rect" coords="370, 259, 380, 290" title="Route 46">
       <area href="/pokearth/johto/route47.shtml" target="_parent" shape="rect" coords="236, 285, 248, 292" title="Route 47">
       <area href="/pokearth/johto/route48.shtml" target="_parent" shape="rect" coords="236, 281, 246, 286" title="Route 48">
-      
+
       <area href="/pokearth/kanto/pallettown.shtml" target="_parent" shape="rect" coords="447, 285, 455, 293" title="Pallet Town">
       <area href="/pokearth/kanto/viridiancity.shtml" target="_parent" shape="rect" coords="447, 258, 455, 273" title="Viridian City">
       <area href="/pokearth/kanto/viridianforest.shtml" target="_parent" shape="rect" coords="447, 245, 455, 253" title="Viridian Forest">
@@ -351,7 +382,7 @@
       <area href="/pokearth/kanto/victoryroad.shtml" target="_parent" shape="rect" coords="422, 229, 429, 237" title="Victory Road">
       <area href="/pokearth/kanto/indigoplateau.shtml" target="_parent" shape="rect" coords="422, 220, 430, 228" title="Indigo Plateau">
       <area href="/pokearth/kanto/tohjofalls.shtml" target="_parent" shape="rect" coords="401, 290, 409, 298" title="Tohjo Falls">
-      
+
       <area href="/pokearth/kanto/route1.shtml" target="_parent" shape="rect" coords="446, 273, 456, 285" title="Route 1">
       <area href="/pokearth/kanto/route2.shtml" target="_parent" shape="rect" coords="446, 244, 456, 258" title="Route 2">
       <area href="/pokearth/kanto/route3.shtml" target="_parent" shape="rect" coords="462, 228, 488, 238" title="Route 3">
@@ -380,9 +411,9 @@
       <area href="/pokearth/kanto/route26.shtml" target="_parent" shape="rect" coords="422, 269, 432, 299" title="Route 26">
       <area href="/pokearth/kanto/route27.shtml" target="_parent" shape="rect" coords="392, 269, 422, 299" title="Route 27">
       <area href="/pokearth/kanto/route28.shtml" target="_parent" shape="rect" coords="407, 260, 423, 270" title="Route 28">
-      
+
       <area href="/pokearth/oblivia/daybreakruins.shtml" target="_parent" shape="rect" coords="833, 344, 841, 352" title="Mitonga Island - Daybreak Ruins">
-      
+
       <area href="/pokearth/oblivia/southernbeach.shtml" target="_parent" shape="rect" coords="665, 447, 673, 454" title="Dolce Island - Southern Beach">
       <area href="/pokearth/oblivia/hill.shtml" target="_parent" shape="rect" coords="665, 439, 673, 445" title="Dolce Island - Hill">
       <area href="/pokearth/oblivia/easternbeach.shtml" target="_parent" shape="rect" coords="673, 439, 681, 445" title="Dolce Island - Eastern Beach">
@@ -446,7 +477,7 @@
         img.style.transform = "scale(2)";
         // img.style.transform = "translateX(-50px)";
         // img.style.transform = "translateY(-50px)";
-        // Animation effect 
+        // Animation effect
         img.style.transition = "transform 0.25s ease";
       }
       // Function to reset image size

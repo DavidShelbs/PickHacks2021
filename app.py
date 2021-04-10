@@ -18,19 +18,30 @@ ref = db.reference()
 # for line in lines:
 #     image_key_ref = ref.child('image_keys')
 #     image_key_ref.update({
-#         line.split(',')[0]: line.split(',')[1]
+#         line.split(',')[0]: line.split(',')[1].replace('https://', '').replace('/', '-')[:-1]
 #     })
 
-app = Flask(__name__)
+file = open('pokedata')
+lines = file.readlines()
+for line in lines:
+    image_key_ref = ref.child('image_locs')
+    key = ' '.join(line.split(' ')[4:])[:-1].replace('.', '')
+    value = ','.join(line.split(' ')[:4])
+    print(key, value)
+    image_key_ref.update({
+        key: value
+    })
 
-@app.route('/')
-def home():
-    return render_template('main_index.html')
-
-@app.route('/pokemap.html')
-def pokemap():
-    return render_template('pokemap.html')
-
-if __name__ == "__main__":
-    app.secret_key = os.urandom(24)
-    app.run(debug=True,host='0.0.0.0', port=80)
+# app = Flask(__name__)
+#
+# @app.route('/')
+# def home():
+#     return render_template('main_index.html')
+#
+# @app.route('/pokemap.html')
+# def pokemap():
+#     return render_template('pokemap.html')
+#
+# if __name__ == "__main__":
+#     app.secret_key = os.urandom(24)
+#     app.run(debug=True,host='0.0.0.0', port=80)
