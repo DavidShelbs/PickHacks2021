@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "pickhacks2021",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
