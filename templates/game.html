@@ -1,8 +1,12 @@
 <html>
 	<body style="background-color: rgb(18,151,177)">
+		<link rel="stylesheet" href="{{ url_for('static', filename='./css/game.css') }}">
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
-		<iframe scrolling="no" style="padding-top: 20px; transform: scale(1.1); height: 850px; border: 0px none; width: 1110px; margin-top: 0.9%; margin-left: 34.3%" id="pm" src="pokemap.html" height="100%" width="100%" title="Iframe Example" frameborder="0" pointer-events: none; sandbox="allow-scripts"></iframe>
+		<div class="slidecontainer">
+		  <input type="range" min="1" max="51" value="0" id="myRange" step="25">
+		</div>
+		<iframe scrolling="no" style="padding-top: 9px; transform: scale(1.1); height: 850px; border: 0px none; width: 1110px; margin-top: 0.9%; margin-left: 34.3%" id="pm" src="pokemap.html" height="100%" width="100%" title="Game map" frameborder="0" pointer-events: none; sandbox="allow-scripts"></iframe>
 
 
 	</body>
