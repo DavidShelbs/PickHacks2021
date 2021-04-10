@@ -1,7 +1,14 @@
 #container {
-  position: relative;
-  width: 850;
-  height: 850;
+  transform: scale(1.05);
+  height: 900px;
+  clear: right;
+  text-align: right;
+  float: right;
+}
+
+body {
+  overflow: hidden;
+  background-color: rgb(18,151,177)
 }
 
 /* #main_image {
@@ -18,15 +25,15 @@
 }
 
 
-/*#bottom{ 
-    background-image: url(static/img/pokearth.png); 
-    position: relative; 
-    width: 850; 
+/*#bottom{
+    background-image: url(static/img/pokearth.png);
+    position: relative;
+    width: 850;
     height: 850;}
-#top{ 
-    background-image: url(static/img/location1.jpeg); 
-    position: absolute; 
-    width: 20px; 
-    height: 300px; 
-    left: 200px; 
+#top{
+    background-image: url(static/img/location1.jpeg);
+    position: absolute;
+    width: 20px;
+    height: 300px;
+    left: 200px;
     right: 200px;}*/

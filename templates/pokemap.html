@@ -23,100 +23,104 @@
     </script>
   </head>
   <body>
-
-  <center>
     <div id="container">
-      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" height="850">
+      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth">
     </div>
     <div id="draggable" class="ui-widget-content">
-      <script>
-        const config = {
-          apiKey: "AIzaSyDp9mGuQY_bP3P8dTjbyKOrjke-hyo4eAg",
-          authDomain: "pickhacks2021.firebaseapp.com",
-          databaseURL: "https://pickhacks2021-default-rtdb.firebaseio.com",
-          projectId: "pickhacks2021",
-          storageBucket: "pickhacks2021.appspot.com",
-          messagingSenderId: "772315144443",
-          appId: "1:772315144443:web:4f3221964df004d27dd05e",
-          measurementId: "G-X45W2P7QR5"
-        };
+    <script>
+			const config = {
+				apiKey: "AIzaSyDp9mGuQY_bP3P8dTjbyKOrjke-hyo4eAg",
+				authDomain: "pickhacks2021.firebaseapp.com",
+				databaseURL: "https://pickhacks2021-default-rtdb.firebaseio.com",
+				projectId: "pickhacks2021",
+				storageBucket: "pickhacks2021.appspot.com",
+				messagingSenderId: "772315144443",
+				appId: "1:772315144443:web:4f3221964df004d27dd05e",
+				measurementId: "G-X45W2P7QR5"
+			};
 
-        firebase.initializeApp(config);
-        function initApp(getStatic) {
-          if( typeof initApp.counter == 'undefined' ) {
-            initApp.counter = 0;
-          }
-          if (!getStatic) {
-            initApp.counter++;
-            firebase.auth().onAuthStateChanged(function(user) {
-              if (user) {
-                console.log("working");
-                const numberOfUsers = 54;
-                const randomIndex = Math.floor(Math.random() * numberOfUsers);
-                var title;
-                var ref = firebase.database().ref('image_keys');
-                ref.once('value').then(function(snapshot) {
-                    var i = 0;
-                    snapshot.forEach(function(childSnapshot) {
-                      if (i == randomIndex){
-                        var image = childSnapshot.val();
-                        title = childSnapshot.key;
-                        var img_tag = document.createElement('img');
-                        img_tag.src = "static/img/" + image;
-                        img_tag.onclick = "enlargeImg()";
-                        img_tag.id = "overlay_image";
-                        img_tag.alt = title;
-                        document.getElementById('draggable').appendChild(img_tag);
-                      }
-                      i++;
-                  });
-                  var ref = firebase.database().ref('image_locs');
-                  ref.once('value').then(function(snapshot) {
-                      snapshot.forEach(function(childSnapshot) {
-                        if (childSnapshot.key == title){
-                          var coords = childSnapshot.val();
-                          firebase.database().ref().child("sessions/" + user.uid + "/" + initApp.counter).set({
-                            "title": title,
-                            "coords": coords
-                          });
-                        }
-                    });
-                  });
-                });
-              }
-            });
-          }
-          else {
-            return initApp.counter
-          }
-        }
+			firebase.initializeApp(config);
+			function initApp(getStatic) {
+				if( typeof initApp.counter == 'undefined' ) {
+					initApp.counter = 0;
+				}
+				if (!getStatic) {
+					initApp.counter++;
+					firebase.auth().onAuthStateChanged(function(user) {
+						if (user) {
+							console.log("working");
+							const numberOfUsers = 54;
+							const randomIndex = Math.floor(Math.random() * numberOfUsers);
+							var title;
+							var ref = firebase.database().ref('image_keys');
+							ref.once('value').then(function(snapshot) {
+									var i = 0;
+									snapshot.forEach(function(childSnapshot) {
+										if (i == randomIndex){
+											var image = childSnapshot.val();
+											title = childSnapshot.key;
+											var img_tag = document.createElement('img');
+											img_tag.src = "static/img/" + image;
+											img_tag.onclick = "enlargeImg()";
+											img_tag.id = "overlay_image";
+											img_tag.alt = title;
+											document.getElementById('draggable').appendChild(img_tag);
+										}
+										i++;
+								});
+								var ref = firebase.database().ref('image_locs');
+								ref.once('value').then(function(snapshot) {
+										snapshot.forEach(function(childSnapshot) {
+											if (childSnapshot.key == title){
+												var coords = childSnapshot.val();
+												firebase.database().ref().child("sessions/" + user.uid + "/" + initApp.counter).set({
+													"title": title,
+													"coords": coords
+												});
+											}
+									});
+								});
+							});
+						}
+					});
+				}
+				else {
+					return initApp.counter
+				}
+			}
 
-        window.onload = function() {
-          initApp(false);
-        };
+			window.onload = function() {
+				initApp(false);
+			};
 
-        function calculateDistance(e) {
-          ecoords = e.coords.split(',')
-          ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
-          ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
-          var counter = initApp(true);
-          var user = firebase.auth().currentUser
-          var ref = firebase.database().ref("sessions/" + user.uid + "/" + counter + "/coords");
-          ref.once('value').then(function(snapshot) {
-            var coords = snapshot.val();
-            goalcoords = coords.split(',')
-            gx = (Number(goalcoords[2]) + Number(goalcoords[0]))/2
-            gy = (Number(goalcoords[3]) + Number(goalcoords[1]))/2
-            firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
-              "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
-            });
-          });
-          initApp(false);
-        }
+			function calculateDistance(e) {
+				ecoords = e.coords.split(',')
+				ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
+				ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
+				var counter = initApp(true);
+				var user = firebase.auth().currentUser
+				var ref = firebase.database().ref("sessions/" + user.uid + "/" + counter + "/coords");
+				ref.once('value').then(function(snapshot) {
+					var coords = snapshot.val();
+					goalcoords = coords.split(',')
+					gx = (Number(goalcoords[2]) + Number(goalcoords[0]))/2
+					gy = (Number(goalcoords[3]) + Number(goalcoords[1]))/2
+					firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
+						"score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+					});
+				});
+				initApp(false);
+			}
+		</script>
+  </div>
 
-      </script>
-    </div>
-  </center>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 20%;">
+  </div>
+
+  <div style="z-index:2; height: 84%; width: 24%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); padding: 50px; margin: 20px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span></span></div>
+
+  <div style="z-index:4; height: 150px; width: 423px; padding: 50px; margin: 20px; margin-left:30px; margin-top: 80px; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span></span></div>
 
   <map name="pokearth">
     <area href="#" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokemon HQ Laboratory" onclick="calculateDistance(pkmhhqlab)" id="pkmhhqlab">
