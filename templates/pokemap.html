@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/pokemap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pokemap.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Draggable - Default functionality</title>
@@ -30,26 +30,26 @@
   </center>
 
   <map name="pokearth">
-      <area href="/pokearth/orre/pokemonhqlab.shtml" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokémon HQ Laboratory">
-      <area href="/pokearth/orre/gateonport.shtml" target="_parent" shape="rect" coords="25, 102, 33, 116" title="Gateon Port">
-      <area href="/pokearth/orre/gateonport.shtml" target="_parent" shape="rect" coords="25, 102, 40, 110" title="Gateon Port">
-      <area href="/pokearth/orre/citadarkisle.shtml" target="_parent" shape="rect" coords="7, 151, 15, 159" title="Citadark Isle">
-      <area href="/pokearth/orre/agatevillage.shtml" target="_parent" shape="rect" coords="66, 66, 74, 82" title="Agate Village">
-      <area href="/pokearth/orre/kaminkoslab.shtml" target="_parent" shape="rect" coords="52, 96, 60, 104" title="Kaminko's Laboratory">
-      <area href="/pokearth/orre/orrecolosseum.shtml" target="_parent" shape="rect" coords="57, 122, 65, 130" title="Orre Colosseum">
-      <area href="/pokearth/orre/oasispokespot.shtml" target="_parent" shape="rect" coords="73, 90, 81, 96" title="Oasis PokéSpot">
-      <area href="/pokearth/orre/pyritetown.shtml" target="_parent" shape="rect" coords="78, 124, 93, 139" title="Pyrite Town">
-      <area href="/pokearth/orre/mt.battle.shtml" target="_parent" shape="rect" coords="98, 55, 106, 63" title="Mt. Battle">
-      <area href="/pokearth/orre/cavepokespot.shtml" target="_parent" shape="rect" coords="114, 70, 122, 76" title="Cave PokéSpot">
-      <area href="/pokearth/orre/shadowpokemonlaboratory.shtml" target="_parent" shape="rect" coords="117, 90, 125, 98" title="Shadow Pokémon Laboratory">
-      <area href="/pokearth/orre/realgamtower.shtml" target="_parent" shape="rect" coords="118, 110, 126, 118" title="Realgam Tower">
-      <area href="/pokearth/orre/cipherkeylair.shtml" target="_parent" shape="rect" coords="130, 34, 138, 42" title="Cipher Key Lair">
-      <area href="/pokearth/orre/s.s.libra.shtml" target="_parent" shape="rect" coords="151, 74, 159, 82" title="S.S. Libra">
-      <area href="/pokearth/orre/rockpokespot.shtml" target="_parent" shape="rect" coords="180, 79, 188, 85" title="Rock-Ground PokéSpot">
-      <area href="/pokearth/orre/phenaccity.shtml" target="_parent" shape="rect" coords="144, 109, 159, 117" title="Phenac City">
-      <area href="/pokearth/orre/phenaccity.shtml" target="_parent" shape="rect" coords="151, 109, 159, 124" title="Phenac City">
-      <area href="/pokearth/orre/outskirtstand.shtml" target="_parent" shape="rect" coords="177, 104, 185, 112" title="Outskirt Stand">
-      <area href="/pokearth/orre/snagemhideout.shtml" target="_parent" shape="rect" coords="179, 52, 187, 60" title="Snagem Hideout">
+      <area href="#" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokémon HQ Laboratory" onclick="calculateDistance(pkmhhqlab)" id="pkmhhqlab">
+      <area href="#" target="_parent" shape="rect" coords="25, 102, 33, 116" title="Gateon Port" onclick="calculateDistance(gateonport)" id="gateonport">
+      <area href="#" target="_parent" shape="rect" coords="25, 102, 40, 110" title="Gateon Port" onclick="calculateDistance(gateonport2)" id="gateonport2">
+      <area href="#" target="_parent" shape="rect" coords="7, 151, 15, 159" title="Citadark Isle" onclick="calculateDistance(citadarkisle)" id="citadarkisle">
+      <area href="#" target="_parent" shape="rect" coords="66, 66, 74, 82" title="Agate Village" onclick="calculateDistance(kaminkoslab)" id="agatevillage">
+      <area href="#" target="_parent" shape="rect" coords="52, 96, 60, 104" title="Kaminko's Laboratory" onclick="calculateDistance(orrecolosseum)" id="kaminkoslab">
+      <area href="#" target="_parent" shape="rect" coords="57, 122, 65, 130" title="Orre Colosseum" onclick="calculateDistance(gateonoasispokespotport2)" id="orrecolosseum">
+      <area href="#" target="_parent" shape="rect" coords="73, 90, 81, 96" title="Oasis PokéSpot" onclick="calculateDistance(gateonport2)" id="oasispokespot">
+      <area href="#" target="_parent" shape="rect" coords="78, 124, 93, 139" title="Pyrite Town" onclick="calculateDistance(pyritetown)" id="pyritetown">
+      <area href="#" target="_parent" shape="rect" coords="98, 55, 106, 63" title="Mt. Battle" onclick="calculateDistance(mtbattle)" id="mtbattle">
+      <area href="#" target="_parent" shape="rect" coords="114, 70, 122, 76" title="Cave PokéSpot" onclick="calculateDistance(cavepokespot)" id="cavepokespot">
+      <area href="#" target="_parent" shape="rect" coords="117, 90, 125, 98" title="Shadow Pokémon Laboratory" onclick="calculateDistance(shadowpkmnlab)" id="shadowpkmnlab">
+      <area href="#" target="_parent" shape="rect" coords="118, 110, 126, 118" title="Realgam Tower" onclick="calculateDistance(realgamtower)" id="realgamtower">
+      <area href="#" target="_parent" shape="rect" coords="130, 34, 138, 42" title="Cipher Key Lair" onclick="calculateDistance(cipherkeylair)" id="cipherkeylair">
+      <area href="#" target="_parent" shape="rect" coords="151, 74, 159, 82" title="S.S. Libra" onclick="calculateDistance(sslibra)" id="sslibra">
+      <area href="#" target="_parent" shape="rect" coords="180, 79, 188, 85" title="Rock-Ground PokéSpot" onclick="calculateDistance(rockgroundpokespot)" id="rockgroundpokespot">
+      <area href="#" target="_parent" shape="rect" coords="144, 109, 159, 117" title="Phenac City" onclick="calculateDistance(phenaccity)" id="phenaccity">
+      <area href="#" target="_parent" shape="rect" coords="151, 109, 159, 124" title="Phenac City" onclick="calculateDistance(phenaccity2)" id="phenaccity2">
+      <area href="#" target="_parent" shape="rect" coords="177, 104, 185, 112" title="Outskirt Stand" onclick="calculateDistance(outskirtstand)" id="outskirtstand">
+      <area href="#" target="_parent" shape="rect" coords="179, 52, 187, 60" title="Snagem Hideout" onclick="calculateDistance(snagemhideout)" id="snagemhideout">
       
       <area href="/pokearth/almia/chicolevillage.shtml" target="_parent" shape="rect" coords="939, 180, 954, 188" title="Chicole Village">
       <area href="/pokearth/almia/veintown.shtml" target="_parent" shape="rect" coords="939, 146, 947, 161" title="Veintown">
@@ -423,6 +423,19 @@
 
       <area href="/pokearth/hoenn/farawayisland.shtml" target="_parent" shape="rect" coords="0, 839, 14, 850" title="Faraway Island">
     </map>
+
+    <script>
+      function calculateDistance(e) {
+        ecoords = e.coords.split(',')
+        ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
+        ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
+        goalcoords = [19, 67, 27, 74]
+        gx = (goalcoords[2] + goalcoords[0])/2
+        gy = (goalcoords[3] + goalcoords[1])/2
+        console.log(ecoords, goalcoords)
+        console.log(Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2)))
+      }
+    </script>
 
     <script>
       // Get the img object using its Id
