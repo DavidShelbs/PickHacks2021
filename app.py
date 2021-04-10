@@ -1,6 +1,25 @@
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort
 import os
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+
+# Use a service account
+cred = credentials.Certificate('pickhacks2021-f8318e5b6b48.json')
+firebase_admin = firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://pickhacks2021-default-rtdb.firebaseio.com/'
+    })
+
+ref = db.reference()
+
+# file = open('title_to_png.txt')
+# lines = file.readlines()
+# for line in lines:
+#     image_key_ref = ref.child('image_keys')
+#     image_key_ref.update({
+#         line.split(',')[0]: line.split(',')[1]
+#     })
 
 app = Flask(__name__)
 
