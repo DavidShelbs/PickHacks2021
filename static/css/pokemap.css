@@ -17,7 +17,6 @@ body {
 } */
 
 #overlay_image {
-  position: absolute;
   bottom: 20px;
   right: 300px;
   width: 200px;
