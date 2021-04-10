@@ -1,0 +1,36 @@
+<html>
+<body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<h2>HTML Iframes</h2>
+<p>You can use the height and width attributes to specify the size of the iframe:</p>
+
+<!-- <script>
+		var d = $(contentWindow).find('#pm')[0].contentWindow.document;
+			d.open(); d.close();
+		$("body", d).append(htmlPopUpContent);
+		x = $(contentWindow).find('#' + Iframe).contents();
+		$(x).find('body').attr('oncontextmenu', 'return false');
+
+		$(x).click(function (e) {
+			e.preventDefault();
+			return false;
+		});
+</script> -->
+
+<iframe id="pm" src="pokemap.html" height="100%" width="100%" title="Iframe Example" frameborder="0" pointer-events: none; sandbox="allow-scripts"></iframe>
+
+
+<script>
+  function calculateDistance(e) {
+    ecoords = e.coords.split(',')
+    ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
+    ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
+    goalcoords = [19, 67, 27, 74]
+    gx = (goalcoords[2] + goalcoords[0])/2
+    gy = (goalcoords[3] + goalcoords[1])/2
+    console.log(ecoords, goalcoords)
+    console.log(Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2)))
+  }
+</script>
+</body>
+</html>

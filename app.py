@@ -31,6 +31,10 @@ def home():
 def pokemap():
     return render_template('pokemap.html')
 
+@app.route('/game.html')
+def game():
+	return render_template('game.html')
+
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
     app.run(debug=True,host='0.0.0.0', port=80)
