@@ -1,0 +1,377 @@
+Pokémon HQ Laboratory
+Gateon Port
+Gateon Port
+Citadark Isle
+Agate Village
+Kaminko's Laboratory
+Orre Colosseum
+Oasis PokéSpot
+Pyrite Town
+Mt. Battle
+Cave PokéSpot
+Shadow Pokémon Laboratory
+Realgam Tower
+Cipher Key Lair
+S.S. Libra
+Rock-Ground PokéSpot
+Phenac City
+Phenac City
+Outskirt Stand
+Snagem Hideout
+Chicole Village
+Veintown
+Ranger School
+Ranger School
+Pueltown
+Altru Park
+Altru Building
+Altru Tower
+Peril Cliffs
+Marine Cave
+Cargo Ship
+Ranger Union
+Shiver Camp
+Shiver Camp
+Almia Castle
+Chroma Ruins
+Chroma Highlands
+Boyleland
+Volcano Cave
+Haruba Village
+Hippowdon Temple
+Oil Field Hideout
+Sea of Wailord
+Puel Sea
+Capture Arena
+Chicole Path
+School Road
+Nabiki Beach
+Vein Forest
+Union Road
+Crysta Cave
+Hia Valley
+Chroma Road
+Chroma Road
+Chroma Road
+Haruba Desert
+Ring Town
+Kisara Plains
+Lyra Forest
+Krokka Tunnel
+East Road
+Fall City
+Underground Waterways
+Dusk Factory
+Capture Arena
+Safra Sea
+Summerland
+Summerland
+Olive Jungle
+Jungle Relic
+Panula Cave
+North Road
+Wintown
+Wintown
+Sekra Range
+Go-Rock Squad Base
+Fiore Temple
+Twinleaf Town
+Lake Verity
+Sandgem Town
+Jubilife City
+Canalave City
+Iron Island
+Full Moon Island
+New Moon Island
+Floaroma Town
+Eterna City
+Eterna City
+Oreburgh City
+Oreburgh City
+Pal Park
+Snowpoint City
+Lake Acuity
+Acuity Lakefront
+Celestic Town
+Hearthome City
+Solaceon Town
+Veilstone City
+Pastoria City
+Sendoff Spring
+Spring Path
+Lake Valor
+Valor Lakefront
+Sunyshore City
+Victory Road
+Pokémon League
+Fight Area
+Survival Area
+Resort Area
+Battle Tower
+Battle Frontier
+Mt. Coronet
+Mt. Coronet
+Valley Windwords
+Fuego Ironworks
+Eterna Forest
+Seabreak Path
+Flower Paradise
+Stark Mountain
+Route 201
+Route 202
+Route 203
+Route 204
+Route 205
+Route 205
+Route 206
+Route 207
+Route 208
+Route 209
+Route 209
+Route 210
+Route 210
+Route 211
+Route 212
+Route 212
+Route 213
+Route 214
+Route 215
+Route 216
+Route 217
+Route 218
+Route 219
+Route 220
+Route 221
+Route 223
+Route 222
+Route 224
+Route 224
+Route 225
+Route 226
+Route 227
+Route 228
+Route 229
+Route 230
+Littleroot Town
+Oldale Town
+Petalburg City
+Rustboro City
+Rustboro City
+Dewford Town
+Slateport City
+Mauville City
+Mauville City
+Verdanturf Town
+Lavaridge Town
+Fallarbor Town
+Fortree City
+Lilycove City
+Pacifidlog Town
+Sootopolis City
+Mossdeep City
+Evergrande City
+Battle Frontier
+Southern Island
+Route 101
+Route 102
+Route 103
+Route 104
+Route 104
+Route 105
+Route 106
+Route 107
+Route 108
+Route 109
+Route 110
+Route 111
+Route 112
+Route 113
+Route 114
+Route 114
+Meteor Falls
+Route 115
+Route 116
+Route 117
+Route 118
+Route 119
+Route 120
+Route 121
+Route 122
+Route 123
+Route 124
+Route 124
+Route 125
+Route 126
+Route 127
+Route 128
+Route 129
+Route 130
+Route 131
+Route 132
+Route 133
+Route 134
+One Island
+Treasure Beach
+Kindle Road
+Mt. Ember
+Two Island
+Cape Brink
+Three Island
+Three Isle Port
+Bond Bridge
+Berry Forest
+Four Island
+Five Island
+Five Isle Meadow
+Memorial Pillar
+Water Labyrinth
+Lost Cave
+Resort Gorgeous
+Navel Rock
+Six Island
+Water Path
+Dotted Hole
+Ruin Valley
+Pattern Bush
+Green Path
+Outcast Island
+Altering Cave
+Seven Island
+Trainer Tower
+Canyon Entrance
+Sevault Canyon
+Tanoby Ruins
+Birth Island
+New Bark Town
+Cherrygrove City
+Violet City
+Dark Cave
+Ruins of Alph
+Union Cave
+Azalea Town
+Ilex Forest
+Goldenrod City
+National Park
+Ecruteak City
+Ecruteak City
+Olivine City
+Whirl Islands
+Cianwood City
+Mt. Mortar
+Mahogany Town
+Lake of Rage
+Ice Path
+Blackthorn City
+Dragon's Den
+Mt. Silver
+Safari Zone
+Battle Frontier
+Sinjoh Ruins
+Route 29
+Route 30
+Route 31
+Route 32
+Route 33
+Route 34
+Route 35
+Route 36
+Route 37
+Route 38
+Route 39
+Route 40
+Route 41
+Route 42
+Route 43
+Route 44
+Route 45
+Route 46
+Route 47
+Route 48
+Pallet Town
+Viridian City
+Viridian Forest
+Pewter City
+Pewter City
+Mt. Moon
+Cerulean City
+Rock Tunnel
+Power Plant
+Lavender Town
+Pokémon Tower
+Saffron City
+Celadon City
+Vermilion City
+Diglett's Cave
+Fuchsia City
+Seafoam Islands
+Cinnabar Island
+Victory Road
+Indigo Plateau
+Tohjo Falls
+Route 1
+Route 2
+Route 3
+Route 4
+Route 5
+Route 6
+Route 7
+Route 8
+Route 9
+Route 10
+Route 11
+Route 12
+Route 13
+Route 14
+Route 15
+Route 16
+Route 17
+Route 18
+Route 19
+Route 20
+Route 21
+Route 22
+Route 23
+Route 24
+Route 25
+Route 26
+Route 27
+Route 28
+Mitonga Island - Daybreak Ruins
+Dolce Island - Southern Beach
+Dolce Island - Hill
+Dolce Island - Eastern Beach
+Renbow Island - Cocona Village
+Renbow Island - Teakwood Forest
+Renbow Island - Rasp Cavern
+Renbow Island - Lapras Beach
+Renbow Island - Curl Bay
+Renbow Island - Rand's House
+Renbow Island - Latolato Trail
+Renbow Island - Latolato Trail
+Renbow Island - Mt. Latolato
+Renbow Island - Wireless Tower
+Renbow Island - Hinder Cape
+Renbow Island - Hinder Cape
+Renbow Island - Big Booker Bridge
+Offshore Renbow Island - Coral Sea
+Mitonga Island - Tilt Village
+Mitonga Island - Mitonga Road
+Mitonga Island - Mitonga Road
+Mitonga Island - Mitonga Road
+Mitonga Island - Noir Forest
+Mitonga Island - Old Mansion
+Mitonga Island - Dangerous Cliff
+Faldera Island - Faldera Volcano
+Sophian Island - Aqua Resort
+Sophian Island - Sophian Road
+Sophian Island - Sophian Road
+Sophian Island - Canal Ruins
+Sophian Island - Mt. Sorbet
+Sophian Island - Silver Falls
+Sophian Island - Oblivia Ruins
+Tilikule Island - Tilikule Monument
+Layuda Island - Mt. Layuda
+Eastern Sea - Undersea Cavern
+Western Sea - Rainbow Dais
+Oblivia Region - Sky Fortress
+Faraway Island
