@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="pokemap.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/pokemap.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Draggable - Default functionality</title>
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
       #draggable { width: 1650px; height: 0; padding: -1em; }
-    </style>q
+    </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -22,10 +22,10 @@
   
   <center>
     <div id="container">
-      <img src="static/media/pokearth.png" alt="Pokearth" usemap="#pokearth" height="850">
+      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" height="850">
     </div>
     <div id="draggable" class="ui-widget-content">
-      <img src="static/media/location1.jpeg" onclick="enlargeImg()" id="overlay_image"/>
+      <img src="static/img/location1.jpeg" onclick="enlargeImg()" id="overlay_image"/>
     </div>
   </center>
 
