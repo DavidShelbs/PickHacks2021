@@ -4,10 +4,14 @@
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 		<div class="slidecontainer">
-		  <input type="range" min="1" max="51" value="0" id="myRange" step="25">
+		  <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 20%;">
 		</div>
-		<iframe scrolling="no" style="padding-top: 9px; transform: scale(1.1); height: 850px; border: 0px none; width: 1110px; margin-top: 0.9%; margin-left: 34.3%" id="pm" src="pokemap.html" height="100%" width="100%" title="Game map" frameborder="0" pointer-events: none; sandbox="allow-scripts"></iframe>
 
+		<div style="z-index:2; height: 84%; width: 24%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); padding: 50px; margin: 20px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span></span></div>
+
+		<div style="z-index:4; height: 150px; width: 423px; padding: 50px; margin: 20px; margin-left:30px; margin-top: 80px; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span></span></div>
+
+		<iframe scrolling="no" style="z-index: 1; transform: scale(1.1); height: 850px; border: 0px none; width: 1110px; margin-top: -0.1%; margin-left: 34.3%" id="pm" src="pokemap.html" height="100%" width="100%" title="Game map" frameborder="0" pointer-events: none; sandbox="allow-scripts"></iframe>
 
 	</body>
-</html><!-- transform: scale(1.159); height: 850px; border: 0px none; width: 1105px; margin-top: 0.9%; margin-left: 34.3% -->
+</html>
