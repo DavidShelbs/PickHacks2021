@@ -18,7 +18,18 @@ ref = db.reference()
 # for line in lines:
 #     image_key_ref = ref.child('image_keys')
 #     image_key_ref.update({
-#         line.split(',')[0]: line.split(',')[1]
+#         line.split(',')[0]: line.split(',')[1].replace('https://', '').replace('/', '-')[:-1]
+#     })
+
+# file = open('pokedata')
+# lines = file.readlines()
+# for line in lines:
+#     image_key_ref = ref.child('image_locs')
+#     key = ' '.join(line.split(' ')[4:])[:-1].replace('.', '')
+#     value = ','.join(line.split(' ')[:4])
+#     print(key, value)
+#     image_key_ref.update({
+#         key: value
 #     })
 
 app = Flask(__name__)
