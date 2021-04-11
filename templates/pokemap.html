@@ -32,7 +32,7 @@
       float: left;
       width: 50%;
       }
-  
+
       .row:after {
       content: "";
       display: table;
@@ -41,6 +41,48 @@
       </style>
   </head>
   <body>
+    <script>
+      var collection=[];// final collection of sounds to play
+      var loadedIndex=0;
+
+      function init(audios) {
+        for(var i=0;i<audios.length;i++) {
+          var audio = new Audio(audios[i]);
+          collection.push(audio);
+          buffer(audio);
+        }
+      }
+      function buffer(audio) {
+      if(audio.readyState==4)return loaded();
+      setTimeout(function(){buffer(audio)},100);
+      }
+
+      // check if we're leady to dj this
+      function loaded() {
+        loadedIndex++;
+        if(collection.length==loadedIndex)playLooped();
+      }
+
+      // play and loop after finished
+      function playLooped() {
+        var audio=Math.floor(Math.random() * (collection.length));
+        audio=collection[audio];
+        audio.play();
+        setTimeout(playLooped,audio.duration*1000);
+      }
+
+      // the songs to be played!
+      init([
+        '../static/media/Route_29.mp3',
+        '../static/media/Route_110.mp3',
+        '../static/media/Route_205.mp3'
+      ]);
+
+
+
+      // var audio = new Audio('../static/media/Route_29.mp3');
+      // audio.play();
+    </script>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: -5;" id="pokearth">
       <div id="draggable" class="ui-widget-content">
@@ -155,13 +197,26 @@
                 var ref = firebase.database().ref('sessions/' + user.uid);
                 ref.once('value').then(function(snapshot) {
                   var total = 0;
+                  var i = 0;
                   snapshot.forEach(function(childSnapshot) {
+                      i++;
                       var json = childSnapshot.val();
                       var score = json.score;
                       total += score;
                       firebase.database().ref().child("sessions/" + user.uid).update({
                         "total_score": total
                       });
+                      if (i == 5) {
+                        var postData = {
+                          userId: firebase.auth().currentUser.uid,
+                          email: firebase.auth().currentUser.email,
+                          score: total
+                        };
+                        var newPostKey = firebase.database().ref().child("leaderboard/").push().key;
+                        var updates = {};
+                        updates["leaderboard/" + newPostKey] = postData;
+                        firebase.database().ref().update(updates);
+                      }
                     });
                   });
                   
@@ -205,7 +260,7 @@
   </div>
 
   <div class="slidecontainer">
-    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 25%;">
+    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 24%;">
   </div>
 
 
@@ -213,30 +268,31 @@
 <!-- <button onclick="location.href='/'">BUTTSBUTTSBUTTSBUTTSBUTTSBUTTSBUTTSBUTTS</button> -->
 
 
-  <div style="z-index:2; height: 90%; width: 31.5%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); margin: 20px; margin-left: 60px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span>
-    <div style="z-index:4; height: 300px; width: 525px; margin: 20px; margin-left: 5%; margin-top: 3%; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span>
-      <table style="width: 90%; text-align: center; font-family: sans-serif; font-size: large;">
+  <div style="z-index:2; height: 90%; width: 31.5%; margin: 20px; margin-left: 60px; position: absolute; background-image: url('../static/img/gameboy.png'); background-repeat: no-repeat;
+  background-size: 100% 100%; border-radius:25px"><span>
+    <div style="z-index:4; height: 340px; width: 525px; margin: 20px; margin-left: 5%; margin-top: 13.8%; position: absolute; background-color: transparent; border-radius:10px"><span>
+      <table style="width: 70%; text-align: center; font-family: sans-serif; font-size: large; margin-top: 11%; margin-left: 12%">
         <tr>
-          <th style="font-size: 30px; font-weight: bold;">Round:</th>
-          <th style="font-size: 30px; font-weight: bold;">Score:</th>
+          <th style="font-size: 20px; font-weight: bold;">Round:</th>
+          <th style="font-size: 20px; font-weight: bold;">Score:</th>
         </tr>
-        <tr id="1" height="38px">
+        <tr id="1" height="32px">
         </tr>
-        <tr id="2" height="38px">
+        <tr id="2" height="32px">
         </tr>
-        <tr id="3" height="38px">
+        <tr id="3" height="32px">
         </tr>
-        <tr id="4" height="38px">
+        <tr id="4" height="32px">
         </tr>
-        <tr id="5" height="38px">
+        <tr id="5" height="32px">
         </tr>
-        <tr id="6" height="38px">
-          <td style="font-size: 30px; font-weight: bold;">Total Score:</td>
+        <tr id="6" height="32px">
+          <td style="font-size: 20px; font-weight: bold;">Total Score:</td>
           <td id="total_score" style="color: rgb(231,76,60); font-weight: bold;">0</td>
         </tr>
       </table>
     </span></div>
-    <div style="margin-top: 60%; margin-left: 12%">
+    <div style="margin-top: 65%; margin-left: 12%">
       <h1>Difficulty:</h1>
     </div>
     <div>
