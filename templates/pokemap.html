@@ -41,6 +41,48 @@
       </style>
   </head>
   <body>
+    <script>
+      var collection=[];// final collection of sounds to play
+      var loadedIndex=0;
+
+      function init(audios) {
+        for(var i=0;i<audios.length;i++) {
+          var audio = new Audio(audios[i]);
+          collection.push(audio);
+          buffer(audio);
+        }
+      }
+      function buffer(audio) {
+      if(audio.readyState==4)return loaded();
+      setTimeout(function(){buffer(audio)},100);
+      }
+
+      // check if we're leady to dj this
+      function loaded() {
+        loadedIndex++;
+        if(collection.length==loadedIndex)playLooped();
+      }
+
+      // play and loop after finished
+      function playLooped() {
+        var audio=Math.floor(Math.random() * (collection.length));
+        audio=collection[audio];
+        audio.play();
+        setTimeout(playLooped,audio.duration*1000);
+      }
+
+      // the songs to be played!
+      init([
+        '../static/media/Route_29.mp3',
+        '../static/media/Route_110.mp3',
+        '../static/media/Route_205.mp3'
+      ]);
+
+
+
+      // var audio = new Audio('../static/media/Route_29.mp3');
+      // audio.play();     
+    </script>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
       <div id="draggable" class="ui-widget-content">
