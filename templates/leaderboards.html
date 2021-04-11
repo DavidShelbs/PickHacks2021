@@ -6,6 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="static/css/leaderboards.css">
+	<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
+	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+	<script type="text/javascript" src="static/js/google_auth.js"></script>
 	<title>PokeGuessr Leaderboard</title>
 </head>
 
@@ -22,28 +26,50 @@
 			appId: "1:772315144443:web:4f3221964df004d27dd05e",
 			measurementId: "G-X45W2P7QR5"
 		};
-
 		firebase.initializeApp(config);
+
+		function staticArray(getStatic, value) {
+			if( typeof staticArray.Array == 'undefined' ) {
+				staticArray.Array = [];
+			}
+			if (!getStatic) {
+				staticArray.Array.push(value);
+			}
+			else {
+				return staticArray.Array;
+			}
+		}
+
 		function initApp() {
 			firebase.auth().onAuthStateChanged(function(user) {
 				if (user) {
-					var ref = firebase.database().ref('sessions');
+					var ref = firebase.database().ref('leaderboard');
 					ref.once('value').then(function(snapshot) {
 							snapshot.forEach(function(childSnapshot) {
-								if (childSnapshot.key == title){
-									var coords = childSnapshot.val();
-									firebase.database().ref().child("sessions/" + user.uid + "/" + initApp.counter).set({
-										"title": title,
-										"coords": coords
-									});
-								}
-						});
+								var json = childSnapshot.val();
+								var email = json.email;
+								var score = json.score;
+								staticArray(false, [email, score]);
+							});
+							var array = staticArray(true, 0);
+							array.sort()
+							array.reverse()
+							for (var i = 0; i < 5; i++) {
+								var li = document.createElement('li');
+								var mrk = document.createElement('mark');
+								var sml = document.createElement('small');
+								mrk.innerText = array[i][0]
+								sml.innerText = array[i][1]
+								li.appendChild(mrk);
+								li.appendChild(sml);
+								document.getElementById('ol').appendChild(li);
+							}
 					});
 				}
 				else {
 
 				}
-			}
+			});
 		}
 
 		window.onload = function() {
@@ -58,8 +84,8 @@
       </svg>
       High Scores
     </h1>
-    <ol>
-      <li>
+    <ol id="ol">
+      <!-- <li>
         <mark>Aaron Colvin</mark>
         <small>315</small>
       </li>
@@ -78,7 +104,7 @@
       <li>
         <mark>Marco Polo</mark>
         <small>203</small>
-      </li>
+      </li> -->
     </ol>
   </div>
 
