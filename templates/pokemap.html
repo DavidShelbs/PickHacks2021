@@ -32,7 +32,7 @@
       float: left;
       width: 50%;
       }
-  
+
       .row:after {
       content: "";
       display: table;
@@ -77,10 +77,10 @@
         '../static/media/Route_110.mp3',
         '../static/media/Route_205.mp3'
       ]);
-   
+
     </script>
     <div id="container">
-      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
+      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: -5;" id="pokearth">
       <div id="draggable" class="ui-widget-content">
         <script>
           const config = {
@@ -155,19 +155,23 @@
               var counter = initApp(true);
               var user = firebase.auth().currentUser
               var ref = firebase.database().ref("sessions/" + user.uid + "/" + counter + "/coords");
+              var colorway = {1:'#FF0000',2:'#0000ff',3:'#E33BC5',4:'#00BD26',5:'#000000'}
               ref.once('value').then(function(snapshot) {
                 var coords = snapshot.val();
                 goalcoords = coords.split(',')
                 gx = (Number(goalcoords[2]) + Number(goalcoords[0]))/2
                 gy = (Number(goalcoords[3]) + Number(goalcoords[1]))/2
                 firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
-                  "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+                  "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0),
+                  "guess": e.coords.replaceAll(' ', '')
                 });
                 var parenttbl = document.getElementById(counter.toString());
                 var newel = document.createElement('td');
                 var newel2 = document.createElement('td');
                 newel.innerHTML = counter
                 newel2.innerHTML = Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+                newel.style.color = colorway[counter]
+                newel2.style.color = colorway[counter]
                 parenttbl.appendChild(newel);
                 parenttbl.appendChild(newel2);
 
@@ -179,19 +183,68 @@
                 initApp(false);
               }
               else {
+                var canv = document.createElement('canvas');
+                canv.width = 1100;
+                canv.height = 850;
+                canv.id = 'can';
+                document.getElementById('container').appendChild(canv);
+
+                var canvas = document.getElementById('can'),
+                    context = canvas.getContext('2d');
+
                 var user = firebase.auth().currentUser
                 var ref = firebase.database().ref('sessions/' + user.uid);
                 ref.once('value').then(function(snapshot) {
                   var total = 0;
+                  var i = 0;
                   snapshot.forEach(function(childSnapshot) {
+                      i++;
                       var json = childSnapshot.val();
                       var score = json.score;
                       total += score;
                       firebase.database().ref().child("sessions/" + user.uid).update({
                         "total_score": total
                       });
+                      if (i == 5) {
+                        var postData = {
+                          userId: firebase.auth().currentUser.uid,
+                          email: firebase.auth().currentUser.email,
+                          score: total
+                        };
+                        var newPostKey = firebase.database().ref().child("leaderboard/").push().key;
+                        var updates = {};
+                        updates["leaderboard/" + newPostKey] = postData;
+                        firebase.database().ref().update(updates);
+                      }
                     });
                   });
+
+                var ref = firebase.database().ref('sessions/' + user.uid);
+                ref.once('value').then(function(snapshot) {
+                  var total = 0;
+                  if (typeof calculateDistance.runs == 'undefined') {
+                    calculateDistance.runs = 0;
+                  }
+                  snapshot.forEach(function(childSnapshot) {
+                      if (calculateDistance.runs < 5) {
+                        var json = childSnapshot.val();
+                        console.log(json.coords)
+                        var goal = json.coords.split(',');
+                        var guess = json.guess.split(',');
+                        var colorway = {1:'#FF0000',2:'#0000ff',3:'#FF00DD',4:'#00FF33',5:'#000000'}
+                        var color = colorway[calculateDistance.runs]
+                        calculateDistance.runs += 1;
+                        context.strokeStyle=color;
+                        context.lineWidth = 3;
+                        context.beginPath();
+                        context.moveTo((Number(guess[2])+Number(guess[0]))/2, (Number(guess[3])+Number(guess[1]))/2);
+                        context.lineTo((Number(goal[2])+Number(goal[0]))/2, (Number(goal[3])+Number(goal[1]))/2);
+                        context.stroke();
+                      }
+
+                    });
+                  });
+
                   initApp(false);
                   var img = document.getElementById("draggable");
                   img.parentNode.removeChild(img);
