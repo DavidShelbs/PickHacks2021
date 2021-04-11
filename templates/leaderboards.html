@@ -52,8 +52,9 @@
 								staticArray(false, [email, score]);
 							});
 							var array = staticArray(true, 0);
-							array.sort()
+							array.sort(function(x, y){return x[1] - y[1];});
 							array.reverse()
+							console.log(array)
 							for (var i = 0; i < 5; i++) {
 								var li = document.createElement('li');
 								var mrk = document.createElement('mark');
