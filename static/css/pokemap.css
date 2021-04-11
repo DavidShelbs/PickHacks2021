@@ -6,6 +6,13 @@
   float: right;
 }
 
+#can {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+}
+
 #draggable {
   display: initial;
   position: sticky;

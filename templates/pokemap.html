@@ -42,7 +42,7 @@
   </head>
   <body>
     <div id="container">
-      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
+      <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: -5;" id="pokearth">
       <div id="draggable" class="ui-widget-content">
         <script>
           const config = {
@@ -123,7 +123,8 @@
                 gx = (Number(goalcoords[2]) + Number(goalcoords[0]))/2
                 gy = (Number(goalcoords[3]) + Number(goalcoords[1]))/2
                 firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
-                  "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+                  "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0),
+                  "guess": e.coords.replaceAll(' ', '')
                 });
                 var parenttbl = document.getElementById(counter.toString());
                 var newel = document.createElement('td');
@@ -141,6 +142,15 @@
                 initApp(false);
               }
               else {
+                var canv = document.createElement('canvas');
+                canv.width = 1100;
+                canv.height = 850;
+                canv.id = 'can';
+                document.getElementById('container').appendChild(canv);
+
+                var canvas = document.getElementById('can'),
+                    context = canvas.getContext('2d');
+
                 var user = firebase.auth().currentUser
                 var ref = firebase.database().ref('sessions/' + user.uid);
                 ref.once('value').then(function(snapshot) {
@@ -154,6 +164,33 @@
                       });
                     });
                   });
+                  
+                var ref = firebase.database().ref('sessions/' + user.uid);
+                ref.once('value').then(function(snapshot) {
+                  var total = 0;
+                  if (typeof calculateDistance.runs == 'undefined') {
+                    calculateDistance.runs = 0;
+                  }
+                  snapshot.forEach(function(childSnapshot) {
+                      if (calculateDistance.runs < 5) {
+                        var json = childSnapshot.val();
+                        console.log(json.coords)
+                        var goal = json.coords.split(',');
+                        var guess = json.guess.split(',');
+                        var colorway = {0:'#FF0000',1:'#0000ff',2:'#00FF00',3:'#FFFF00',4:'#E0FFFF'}
+                        var color = colorway[calculateDistance.runs]
+                        calculateDistance.runs += 1;
+                        context.strokeStyle=color;
+                        context.lineWidth = 3;
+                        context.beginPath();
+                        context.moveTo((Number(guess[2])+Number(guess[0]))/2, (Number(guess[3])+Number(guess[1]))/2);
+                        context.lineTo((Number(goal[2])+Number(goal[0]))/2, (Number(goal[3])+Number(goal[1]))/2);
+                        context.stroke();
+                      }
+                      
+                    });
+                  });
+
                   initApp(false);
                   var img = document.getElementById("draggable");
                   img.parentNode.removeChild(img);
