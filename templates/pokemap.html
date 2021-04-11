@@ -159,6 +159,7 @@
               var counter = initApp(true);
               var user = firebase.auth().currentUser
               var ref = firebase.database().ref("sessions/" + user.uid + "/" + counter + "/coords");
+              var colorway = {1:'#FF0000',2:'#0000ff',3:'#E33BC5',4:'#00BD26',5:'#000000'}
               ref.once('value').then(function(snapshot) {
                 var coords = snapshot.val();
                 goalcoords = coords.split(',')
@@ -173,6 +174,8 @@
                 var newel2 = document.createElement('td');
                 newel.innerHTML = counter
                 newel2.innerHTML = Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+                newel.style.color = colorway[counter]
+                newel2.style.color = colorway[counter]
                 parenttbl.appendChild(newel);
                 parenttbl.appendChild(newel2);
 
@@ -219,7 +222,7 @@
                       }
                     });
                   });
-                  
+
                 var ref = firebase.database().ref('sessions/' + user.uid);
                 ref.once('value').then(function(snapshot) {
                   var total = 0;
@@ -232,7 +235,7 @@
                         console.log(json.coords)
                         var goal = json.coords.split(',');
                         var guess = json.guess.split(',');
-                        var colorway = {0:'#FF0000',1:'#0000ff',2:'#00FF00',3:'#FFFF00',4:'#E0FFFF'}
+                        var colorway = {1:'#FF0000',2:'#0000ff',3:'#FF00DD',4:'#00FF33',5:'#000000'}
                         var color = colorway[calculateDistance.runs]
                         calculateDistance.runs += 1;
                         context.strokeStyle=color;
@@ -242,7 +245,7 @@
                         context.lineTo((Number(goal[2])+Number(goal[0]))/2, (Number(goal[3])+Number(goal[1]))/2);
                         context.stroke();
                       }
-                      
+
                     });
                   });
 
