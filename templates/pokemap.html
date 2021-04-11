@@ -152,6 +152,7 @@
               ecoords = e.coords.split(',')
               ex = (Number(ecoords[2]) + Number(ecoords[0]))/2
               ey = (Number(ecoords[3]) + Number(ecoords[1]))/2
+              console.log(ex, ey)
               var counter = initApp(true);
               var user = firebase.auth().currentUser
               var ref = firebase.database().ref("sessions/" + user.uid + "/" + counter + "/coords");
@@ -161,6 +162,7 @@
                 goalcoords = coords.split(',')
                 gx = (Number(goalcoords[2]) + Number(goalcoords[0]))/2
                 gy = (Number(goalcoords[3]) + Number(goalcoords[1]))/2
+                console.log(gx,gy)
                 firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
                   "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0),
                   "guess": e.coords.replaceAll(' ', '')
@@ -223,10 +225,10 @@
                 ref.once('value').then(function(snapshot) {
                   var total = 0;
                   if (typeof calculateDistance.runs == 'undefined') {
-                    calculateDistance.runs = 0;
+                    calculateDistance.runs = 1;
                   }
                   snapshot.forEach(function(childSnapshot) {
-                      if (calculateDistance.runs < 5) {
+                      if (calculateDistance.runs <= 5) {
                         var json = childSnapshot.val();
                         console.log(json.coords)
                         var goal = json.coords.split(',');
