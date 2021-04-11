@@ -48,9 +48,10 @@ function googleSignInPopup() {
       var user = result.user;
       if (user != null) {
         user.providerData.forEach(function (profile) {
-          firebase.database().ref().child("users/" + profile.uid).set({
-            "userId": profile.uid,
-            "email": profile.email
+          firebase.database().ref().child("users/" + user.uid).set({
+            "userId": user.uid,
+            "email": user.email,
+            "displayName": user.displayName
           });
         });
       }

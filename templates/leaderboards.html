@@ -10,6 +10,47 @@
 </head>
 
 <body>
+
+	<script>
+		const config = {
+			apiKey: "AIzaSyDp9mGuQY_bP3P8dTjbyKOrjke-hyo4eAg",
+			authDomain: "pickhacks2021.firebaseapp.com",
+			databaseURL: "https://pickhacks2021-default-rtdb.firebaseio.com",
+			projectId: "pickhacks2021",
+			storageBucket: "pickhacks2021.appspot.com",
+			messagingSenderId: "772315144443",
+			appId: "1:772315144443:web:4f3221964df004d27dd05e",
+			measurementId: "G-X45W2P7QR5"
+		};
+
+		firebase.initializeApp(config);
+		function initApp() {
+			firebase.auth().onAuthStateChanged(function(user) {
+				if (user) {
+					var ref = firebase.database().ref('sessions');
+					ref.once('value').then(function(snapshot) {
+							snapshot.forEach(function(childSnapshot) {
+								if (childSnapshot.key == title){
+									var coords = childSnapshot.val();
+									firebase.database().ref().child("sessions/" + user.uid + "/" + initApp.counter).set({
+										"title": title,
+										"coords": coords
+									});
+								}
+						});
+					});
+				}
+				else {
+
+				}
+			}
+		}
+
+		window.onload = function() {
+			initApp(false);
+		};
+	</script>
+
   <div class="leaderboard">
     <h1>
       <svg class="ico-cup">
@@ -63,7 +104,7 @@
     c0-1.097,0.908-1.99,2.024-1.99c1.117,0,2.025,0.893,2.025,1.99C23.241,6.246,22.333,7.138,21.215,7.138z"/>
         </symbol>
   </svg>
-  
+
 </body>
 
 </html>

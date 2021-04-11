@@ -32,7 +32,7 @@
       float: left;
       width: 50%;
       }
-  
+
       .row:after {
       content: "";
       display: table;
@@ -81,7 +81,7 @@
 
 
       // var audio = new Audio('../static/media/Route_29.mp3');
-      // audio.play();     
+      // audio.play();
     </script>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
@@ -187,13 +187,26 @@
                 var ref = firebase.database().ref('sessions/' + user.uid);
                 ref.once('value').then(function(snapshot) {
                   var total = 0;
+                  var i = 0;
                   snapshot.forEach(function(childSnapshot) {
+                      i++;
                       var json = childSnapshot.val();
                       var score = json.score;
                       total += score;
                       firebase.database().ref().child("sessions/" + user.uid).update({
                         "total_score": total
                       });
+                      if (i == 5) {
+                        var postData = {
+                          userId: firebase.auth().currentUser.uid,
+                          email: firebase.auth().currentUser.email,
+                          score: total
+                        };
+                        var newPostKey = firebase.database().ref().child("leaderboard/").push().key;
+                        var updates = {};
+                        updates["leaderboard/" + newPostKey] = postData;
+                        firebase.database().ref().update(updates);
+                      }
                     });
                   });
                   initApp(false);
