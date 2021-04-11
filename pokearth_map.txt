@@ -1,4 +1,3 @@
-<map name="pokearth">
 <area href="/pokearth/orre/pokemonhqlab.shtml" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokémon HQ Laboratory">
 <area href="/pokearth/orre/gateonport.shtml" target="_parent" shape="rect" coords="25, 102, 33, 116" title="Gateon Port">
 <area href="/pokearth/orre/gateonport.shtml" target="_parent" shape="rect" coords="25, 102, 40, 110" title="Gateon Port">

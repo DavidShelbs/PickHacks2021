@@ -1,6 +1,7 @@
 #container {
+  transform-origin: top right;
   transform: scale(1.05);
-  height: 900px;
+  height: 850px;
   clear: right;
   text-align: right;
   float: right;
@@ -14,6 +15,7 @@
 }
 
 #draggable {
+  border: 0px;
   display: initial;
   position: sticky;
   bottom: 0;
@@ -35,7 +37,7 @@ body {
 #overlay_image {
   position: absolute;
   bottom: 0px;
-  right: 50px;
+  right: 5px;
   width: 250px;
   height: 250px;
 }

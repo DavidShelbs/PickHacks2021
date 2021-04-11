@@ -1,0 +1,377 @@
+/pokearth/orre/pokemonhqlab.shtml 19,67,27,74 Pokémon HQ Laboratory
+/pokearth/orre/gateonport.shtml 25,102,33,116 Gateon Port
+/pokearth/orre/gateonport.shtml 25,102,40,110 Gateon Port
+/pokearth/orre/citadarkisle.shtml 7,151,15,159 Citadark Isle
+/pokearth/orre/agatevillage.shtml 66,66,74,82 Agate Village
+/pokearth/orre/kaminkoslab.shtml 52,96,60,104 Kaminko's Laboratory
+/pokearth/orre/orrecolosseum.shtml 57,122,65,130 Orre Colosseum
+/pokearth/orre/oasispokespot.shtml 73,90,81,96 Oasis PokéSpot
+/pokearth/orre/pyritetown.shtml 78,124,93,139 Pyrite Town
+/pokearth/orre/mt.battle.shtml 98,55,106,63 Mt Battle
+/pokearth/orre/cavepokespot.shtml 114,70,122,76 Cave PokéSpot
+/pokearth/orre/shadowpokemonlaboratory.shtml 117,90,125,98 Shadow Pokémon Laboratory
+/pokearth/orre/realgamtower.shtml 118,110,126,118 Realgam Tower
+/pokearth/orre/cipherkeylair.shtml 130,34,138,42 Cipher Key Lair
+/pokearth/orre/s.s.libra.shtml 151,74,159,82 SS Libra
+/pokearth/orre/rockpokespot.shtml 180,79,188,85 Rock-Ground PokéSpot
+/pokearth/orre/phenaccity.shtml 144,109,159,117 Phenac City
+/pokearth/orre/phenaccity.shtml 151,109,159,124 Phenac City
+/pokearth/orre/outskirtstand.shtml 177,104,185,112 Outskirt Stand
+/pokearth/orre/snagemhideout.shtml 179,52,187,60 Snagem Hideout
+/pokearth/almia/chicolevillage.shtml 939,180,954,188 Chicole Village
+/pokearth/almia/veintown.shtml 939,146,947,161 Veintown
+/pokearth/almia/rangerschool.shtml 967,146,975,161 Ranger School
+/pokearth/almia/rangerschool.shtml 967,146,982,154 Ranger School
+/pokearth/almia/pueltown.shtml 932,107,947,115 Pueltown
+/pokearth/almia/altrupark.shtml 932,99,947,107 Altru Park
+/pokearth/almia/altrubuilding.shtml 932,92,947,99 Altru Building
+/pokearth/almia/altrutower.shtml 940,64,946,72 Altru Tower
+/pokearth/almia/perilcliffs.shtml 915,73,923,99 Peril Cliffs
+/pokearth/almia/marinecave.shtml 922,154,930,160 Marine Cave
+/pokearth/almia/cargoship.shtml 982,154,990,160 Cargo Ship
+/pokearth/almia/rangerunion.shtml 891,99,899,107 Ranger Union
+/pokearth/almia/shivercamp.shtml 885,68,900,76 Shiver Camp
+/pokearth/almia/shivercamp.shtml 892,68,900,83 Shiver Camp
+/pokearth/almia/almiacastle.shtml 863,60,869,68 Almia Castle
+/pokearth/almia/chromaruins.shtml 1018,56,1024,64 Chroma Ruins
+/pokearth/almia/chromahighlands.shtml 1018,65,1024,73 Chroma Highlands
+/pokearth/almia/boyleland.shtml 1064,114,1079,122 Boyleland
+/pokearth/almia/volcanocave.shtml 1071,97,1079,114 Volcano Cave
+/pokearth/almia/harubavillage.shtml 1071,195,1086,210 Haruba Village
+/pokearth/almia/hippowdontemple.shtml 1078,178,1086,187 Hippowdon Temple
+/pokearth/almia/oilfieldhideout.shtml 1010,183,1018,189 Oil Field Hideout
+/pokearth/almia/seaofwailord.shtml 1038,154,1046,162 Sea of Wailord
+/pokearth/almia/puelsea.shtml 1022,140,1028,148 Puel Sea
+/pokearth/almia/capturearena.shtml 887,189,895,197 Capture Arena
+/pokearth/almia/chicolepath.shtml 939,161,947,180 Chicole Path
+/pokearth/almia/schoolroad.shtml 947,153,967,161 School Road
+/pokearth/almia/nabikibeach.shtml 930,153,939,161 Nabiki Beach
+/pokearth/almia/veinforest.shtml 939,114,947,146 Vein Forest
+/pokearth/almia/unionroad.shtml 899,99,932,107 Union Road
+/pokearth/almia/crystacave.shtml 862,99,891,107 Crysta Cave
+/pokearth/almia/hiavalley.shtml 862,68,870,99 Hia Valley
+/pokearth/almia/chromaroad.shtml 947,99,987,107 Chroma Road
+/pokearth/almia/chromaroad.shtml 979,76,987,107 Chroma Road
+/pokearth/almia/chromaroad.shtml 979,76,1025,84 Chroma Road
+/pokearth/almia/harubadesert.shtml 1078,187,1086,195 Haruba Desert
+/pokearth/fiore/ringtown.shtml 630,114,638,186 Ring Town
+/pokearth/fiore/kisaraplains.shtml 647,122,655,128 Kisara Plains
+/pokearth/fiore/lyraforest.shtml 631,94,637,102 Lyra Forest
+/pokearth/fiore/krokkatunnel.shtml 679,83,687,89 Krokka Tunnel
+/pokearth/fiore/eastroad.shtml 726,83,734,89 East Road
+/pokearth/fiore/fallcity.shtml 752,82,767,97 Fall City
+/pokearth/fiore/undergroundwaterways.shtml 784,76,792,82 Underground Waterways
+/pokearth/fiore/duskfactory.shtml 783,90,792,96 Dusk Factory
+/pokearth/fiore/capturearena.shtml 760,118,766,126 Capture Arena
+/pokearth/fiore/safrasea.shtml 760,172,766,180 Safra Sea
+/pokearth/fiore/summerland.shtml 693,151,701,166 Summerland
+/pokearth/fiore/summerland.shtml 693,158,708,166 Summerland
+/pokearth/fiore/olivejungle.shtml 720,150,726,158 Olive Jungle
+/pokearth/fiore/junglerelic.shtml 720,142,726,150 Jungle Relic
+/pokearth/fiore/panulacave.shtml 687,103,693,111 Panula Cave
+/pokearth/fiore/northroad.shtml 687,67,693,75 North Road
+/pokearth/fiore/wintown.shtml 686,59,698,67 Wintown
+/pokearth/fiore/wintown.shtml 693,52,701,67 Wintown
+/pokearth/fiore/sekrarange.shtml 693,36,701,43 Sekra Range
+/pokearth/fiore/go-rocksquadbase.shtml 685,19,691,27 Go-Rock Squad Base
+/pokearth/fiore/fioretemple.shtml 704,19,710,27 Fiore Temple
+/pokearth/sinnoh/twinleaftown.shtml 871,582,879,590 Twinleaf Town
+/pokearth/sinnoh/lakeverity.shtml 857,568,872,583 Lake Verity
+/pokearth/sinnoh/sandgemtown.shtml 885,575,893,583 Sandgem Town
+/pokearth/sinnoh/jubilifecity.shtml 878,554,893,569 Jubilife City
+/pokearth/sinnoh/canalavecity.shtml 857,547,865,562 Canalave City
+/pokearth/sinnoh/ironisland.shtml 871,498,879,506 Iron Island
+/pokearth/sinnoh/fullmoonisland.shtml 865,449,873,457 Full Moon Island
+/pokearth/sinnoh/newmoonisland.shtml 878,449,886,457 New Moon Island
+/pokearth/sinnoh/floaromatown.shtml 885,526,893,541 Floaroma Town
+/pokearth/sinnoh/eternacity.shtml 913,505,921,520 Eterna City
+/pokearth/sinnoh/eternacity.shtml 913,505,928,513 Eterna City
+/pokearth/sinnoh/oreburghcity.shtml 906,554,921,562 Oreburgh City
+/pokearth/sinnoh/oreburghcity.shtml 913,554,921,569 Oreburgh City
+/pokearth/sinnoh/palpark.shtml 913,590,921,596 Pal Park
+/pokearth/sinnoh/snowpointcity.shtml 927,435,935,450 Snowpoint City
+/pokearth/sinnoh/lakeacuity.shtml 913,438,926,450 Lake Acuity
+/pokearth/sinnoh/acuitylakefront.shtml 913,435,927,450 Acuity Lakefront
+/pokearth/sinnoh/celestictown.shtml 949,505,957,513 Celestic Town
+/pokearth/sinnoh/hearthomecity.shtml 948,540,963,555 Hearthome City
+/pokearth/sinnoh/solaceontown.shtml 969,533,984,541 Solaceon Town
+/pokearth/sinnoh/veilstonecity.shtml 997,519,1012,534 Veilstone City
+/pokearth/sinnoh/pastoriacity.shtml 976,568,991,583 Pastoria City
+/pokearth/sinnoh/sendoffspring.shtml 1011,540,1027,550 Sendoff Spring
+/pokearth/sinnoh/springpath.shtml 1011,550,1027,555 Spring Path
+/pokearth/sinnoh/lakevalor.shtml 997,554,1008,565 Lake Valor
+/pokearth/sinnoh/valorlakefront.shtml 997,554,1013,569 Valor Lakefront
+/pokearth/sinnoh/sunyshorecity.shtml 1032,554,1047,569 Sunyshore City
+/pokearth/sinnoh/victoryroad.shtml 1032,520,1040,526 Victory Road
+/pokearth/sinnoh/pokemonleague.shtml 1032,512,1040,520 Pokémon League
+/pokearth/sinnoh/fightarea.shtml 983,484,998,492 Fight Area
+/pokearth/sinnoh/survivalarea.shtml 990,463,998,471 Survival Area
+/pokearth/sinnoh/resortarea.shtml 1025,491,1033,499 Resort Area
+/pokearth/sinnoh/battlepark.shtml 990,477,994,484 Battle Tower
+/pokearth/sinnoh/battlefrontier.shtml 994,477,998,484 Battle Frontier
+/pokearth/sinnoh/mt.coronet.shtml 934,477,942,534 Mt Coronet
+/pokearth/sinnoh/mt.coronet.shtml 927,526,935,555 Mt Coronet
+/pokearth/sinnoh/valleywindworks.shtml 899,533,907,541 Valley Windwords
+/pokearth/sinnoh/fuegoironworks.shtml 885,519,893,526 Fuego Ironworks
+/pokearth/sinnoh/eternaforest.shtml 892,505,907,520 Eterna Forest
+/pokearth/sinnoh/seabreakpath.shtml 1046,442,1054,500 Seabreak Path
+/pokearth/sinnoh/flowerparadise.shtml 1046,434,1054,442 Flower Paradise
+/pokearth/sinnoh/starkmountain.shtml 1011,442,1019,448 Stark Mountain
+/pokearth/sinnoh/route201.shtml 873,575,885,583 Route 201
+/pokearth/sinnoh/route202.shtml 885,569,893,575 Route 202
+/pokearth/sinnoh/route203.shtml 893,554,906,562 Route 203
+/pokearth/sinnoh/route204.shtml 885,541,893,554 Route 204
+/pokearth/sinnoh/route205.shtml 892,519,900,541 Route 205
+/pokearth/sinnoh/route205.shtml 906,505,913,513 Route 205
+/pokearth/sinnoh/route206.shtml 913,520,921,548 Route 206
+/pokearth/sinnoh/route207.shtml 913,547,928,555 Route 207
+/pokearth/sinnoh/route208.shtml 934,547,948,555 Route 208
+/pokearth/sinnoh/route209.shtml 963,547,977,555 Route 209
+/pokearth/sinnoh/route209.shtml 969,541,977,555 Route 209
+/pokearth/sinnoh/route210.shtml 969,505,977,533 Route 210
+/pokearth/sinnoh/route210.shtml 957,505,977,513 Route 210
+/pokearth/sinnoh/route211.shtml 928,505,949,513 Route 211
+/pokearth/sinnoh/route212.shtml 948,555,956,583 Route 212
+/pokearth/sinnoh/route212.shtml 948,575,976,583 Route 212
+/pokearth/sinnoh/route213.shtml 991,568,1012,583 Route 213
+/pokearth/sinnoh/route214.shtml 1004,534,1012,555 Route 214
+/pokearth/sinnoh/route215.shtml 976,519,997,527 Route 215
+/pokearth/sinnoh/route216.shtml 913,477,934,485 Route 216
+/pokearth/sinnoh/route217.shtml 913,449,921,485 Route 217
+/pokearth/sinnoh/route218.shtml 865,554,878,562 Route 218
+/pokearth/sinnoh/route219.shtml 885,583,893,590 Route 219
+/pokearth/sinnoh/route220.shtml 885,589,901,597 Route 220
+/pokearth/sinnoh/route221.shtml 901,589,921,597 Route 221
+/pokearth/sinnoh/route223.shtml 1032,526,1040,554 Route 223
+/pokearth/sinnoh/route222.shtml 1011,561,1032,569 Route 222
+/pokearth/sinnoh/route224.shtml 1039,505,1047,520 Route 224
+/pokearth/sinnoh/route224.shtml 1046,498,1054,513 Route 224
+/pokearth/sinnoh/route225.shtml 983,463,991,484 Route 225
+/pokearth/sinnoh/route226.shtml 998,463,1019,471 Route 226
+/pokearth/sinnoh/route227.shtml 1011,448,1019,463 Route 227
+/pokearth/sinnoh/route228.shtml 1018,463,1026,485 Route 228
+/pokearth/sinnoh/route229.shtml 1018,484,1033,492 Route 229
+/pokearth/sinnoh/route230.shtml 997,484,1018,492 Route 230
+/pokearth/hoenn/littleroottown.shtml 57,525,65,533 Littleroot Town
+/pokearth/hoenn/oldaletown.shtml 57,500,65,508 Oldale Town
+/pokearth/hoenn/petalburgcity.shtml 30,500,45,508 Petalburg City
+/pokearth/hoenn/rustborocity.shtml 11,460,26,475 Rustboro City
+/pokearth/hoenn/rustborocity.shtml 11,460,19,468 Rustboro City
+/pokearth/hoenn/dewfordtown.shtml 38,563,46,571 Dewford Town
+/pokearth/hoenn/slateportcity.shtml 85,518,100,533 Slateport City
+/pokearth/hoenn/mauvillecity.shtml 85,467,99,482 Mauville City
+/pokearth/hoenn/mauvillecity.shtml 85,467,93,475 Mauville City
+/pokearth/hoenn/verdanturftown.shtml 57,467,65,475 Verdanturf Town
+/pokearth/hoenn/lavaridgetown.shtml 64,442,72,450 Lavaridge Town
+/pokearth/hoenn/fallabortown.shtml 44,421,59,429 Fallarbor Town
+/pokearth/hoenn/fortreecity.shtml 109,421,117,429 Fortree City
+/pokearth/hoenn/lilycovecity.shtml 156,439,171,454 Lilycove City
+/pokearth/hoenn/pacifidlogtown.shtml 172,525,180,533 Pacifidlog Town
+/pokearth/hoenn/sootopoliscity.shtml 199,487,207,495 Sootopolis City
+/pokearth/hoenn/mossdeepcity.shtml 227,457,242,465 Mossdeep City
+/pokearth/hoenn/evergrandecity.shtml 268,508,276,522 Evergrande City
+/pokearth/hoenn/battlefrontier.shtml 221,552,237,570 Battle Frontier
+/pokearth/hoenn/southernisland.shtml 268,575,280,586 Southern Island
+/pokearth/hoenn/route101.shtml 57,508,65,525 Route 101
+/pokearth/hoenn/route102.shtml 45,500,57,508 Route 102
+/pokearth/hoenn/route103.shtml 57,493,85,501 Route 103
+/pokearth/hoenn/route104.shtml 11,500,29,508 Route 104
+/pokearth/hoenn/route104.shtml 11,475,19,500 Route 104
+/pokearth/hoenn/route105.shtml 11,507,19,555 Route 105
+/pokearth/hoenn/route106.shtml 11,555,46,563 Route 106
+/pokearth/hoenn/route107.shtml 46,564,61,572 Route 107
+/pokearth/hoenn/route108.shtml 61,564,85,572 Route 108
+/pokearth/hoenn/route109.shtml 85,553,93,564 Route 109
+/pokearth/hoenn/route110.shtml 85,482,93,518 Route 110
+/pokearth/hoenn/route111.shtml 85,421,93,467 Route 111
+/pokearth/hoenn/route112.shtml 72,442,85,450 Route 112
+/pokearth/hoenn/route113.shtml 59,421,85,429 Route 113
+/pokearth/hoenn/route114.shtml 27,421,44,429 Route 114
+/pokearth/hoenn/route114.shtml 27,421,35,441 Route 114
+/pokearth/hoenn/meteorfalls.shtml 18,433,27,441 Meteor Falls
+/pokearth/hoenn/route115.shtml 11,433,19,460 Route 115
+/pokearth/hoenn/route116.shtml 26,460,65,480 Route 116
+/pokearth/hoenn/route117.shtml 65,467,85,475 Route 117
+/pokearth/hoenn/route118.shtml 99,467,112,475 Route 118
+/pokearth/hoenn/route119.shtml 100,421,108,467 Route 119
+/pokearth/hoenn/route120.shtml 118,421,125,448 Route 120
+/pokearth/hoenn/route121.shtml 126,439,156,448 Route 121
+/pokearth/hoenn/route122.shtml 142,447,149,467 Route 122
+/pokearth/hoenn/route123.shtml 112,467,150,475 Route 123
+/pokearth/hoenn/route124.shtml 171,439,227,448 Route 124
+/pokearth/hoenn/route124.shtml 183,448,227,465 Route 124
+/pokearth/hoenn/route125.shtml 227,439,242,457 Route 125
+/pokearth/hoenn/route126.shtml 183,465,223,512 Route 126
+/pokearth/hoenn/route127.shtml 223,465,241,515 Route 127
+/pokearth/hoenn/route128.shtml 223,513,268,522 Route 128
+/pokearth/hoenn/route129.shtml 222,525,242,533 Route 129
+/pokearth/hoenn/route130.shtml 204,525,222,533 Route 130
+/pokearth/hoenn/route131.shtml 180,525,204,533 Route 131
+/pokearth/hoenn/route132.shtml 153,525,172,533 Route 132
+/pokearth/hoenn/route133.shtml 131,525,153,533 Route 133
+/pokearth/hoenn/route134.shtml 100,525,131,533 Route 134
+/pokearth/kanto/oneisland.shtml 418,452,426,460 One Island
+/pokearth/kanto/treasurebeach.shtml 418,460,428,481 Treasure Beach
+/pokearth/kanto/kindleroad.shtml 426,420,436,461 Kindle Road
+/pokearth/kanto/mt.ember.shtml 426,411,436,420 Mt Ember
+/pokearth/kanto/twoisland.shtml 482,460,492,469 Two Island
+/pokearth/kanto/capebrink.shtml 482,443,492,460 Cape Brink
+/pokearth/kanto/threeisland.shtml 555,484,563,492 Three Island
+/pokearth/kanto/threeisleport.shtml 554,491,572,501 Three Isle Port
+/pokearth/kanto/bondbridge.shtml 531,483,555,493 Bond Bridge
+/pokearth/kanto/berryforest.shtml 523,484,531,492 Berry Forest
+/pokearth/kanto/fourisland.shtml 435,580,443,588 Four Island
+/pokearth/kanto/fiveisland.shtml 539,636,547,644 Five Island
+/pokearth/kanto/fiveislemeadow.shtml 546,635,556,653 Five Isle Meadow
+/pokearth/kanto/memorialpillar.shtml 554,643,564,669 Memorial Pillar
+/pokearth/kanto/waterlabyrinth.shtml 522,627,548,637 Water Labyrinth
+/pokearth/kanto/lostcave.shtml 555,619,563,627 Lost Cave
+/pokearth/kanto/resortgorgeous.shtml 538,619,565,629 Resort Gorgeous
+/pokearth/kanto/navelrock.shtml 486,607,503,623 Navel Rock
+/pokearth/kanto/sixisland.shtml 547,748,555,756 Six Island
+/pokearth/kanto/waterpath.shtml 554,731,564,753 Water Path
+/pokearth/kanto/dottedhole.shtml 539,772,547,780 Dotted Hole
+/pokearth/kanto/ruinvalley.shtml 538,763,556,781 Ruin Valley
+/pokearth/kanto/patternbush.shtml 547,732,555,740 Pattern Bush
+/pokearth/kanto/greenpath.shtml 530,731,555,741 Green Path
+/pokearth/kanto/outcastisland.shtml 530,707,555,732 Outcast Island
+/pokearth/kantotitleeringcave.shtml 530,708,538,716 Altering Cave
+/pokearth/kanto/sevenisland.shtml 451,772,459,780 Seven Island
+/pokearth/kanto/trainertower.shtml 450,755,460,772 Trainer Tower
+/pokearth/kanto/canyonentrance.shtml 450,779,460,789 Canyon Entrance
+/pokearth/kanto/sevaultcanyon.shtml 458,779,468,804 Sevault Canyon
+/pokearth/kanto/tanobyruins.shtml 434,803,492,813 Tanoby Ruins
+/pokearth/kanto/birthisland.shtml 550,805,568,824 Birth Island
+/pokearth/johto/newbarktown.shtml 384,290,392,298 New Bark Town
+/pokearth/johto/cherrygrovecity.shtml 346,290,354,298 Cherrygrove City
+/pokearth/johto/violetcity.shtml 330,241,338,249 Violet City
+/pokearth/johto/darkcave.shtml 354,242,376,250 Dark Cave
+/pokearth/johto/ruinsofalph.shtml 321,257,329,265 Ruins of Alph
+/pokearth/johto/unioncave.shtml 330,310,338,318 Union Cave
+/pokearth/johto/azaleatown.shtml 311,310,319,318 Azalea Town
+/pokearth/johto/ilexforest.shtml 293,310,301,318 Ilex Forest
+/pokearth/johto/goldenrodcity.shtml 289,269,304,284 Goldenrod City
+/pokearth/johto/nationalpark.shtml 293,241,301,249 National Park
+/pokearth/johto/ecruteakcity.shtml 306,221,322,229 Ecruteak City
+/pokearth/johto/ecruteakcity.shtml 312,221,322,236 Ecruteak City
+/pokearth/johto/olivinecity.shtml 258,234,273,242 Olivine City
+/pokearth/johto/whirlislands.shtml 258,269,266,277 Whirl Islands
+/pokearth/johto/cianwoodcity.shtml 248,277,256,292 Cianwood City
+/pokearth/johto/mt.mortar.shtml 327,221,335,229 Mt Mortar
+/pokearth/johto/mahoganytown.shtml 349,221,357,229 Mahogany Town
+/pokearth/johto/lakeofrage.shtml 349,188,357,196 Lake of Rage
+/pokearth/johto/icepath.shtml 369,221,377,229 Ice Path
+/pokearth/johto/blackthorncity.shtml 377,221,385,229 Blackthorn City
+/pokearth/johto/dragon'sden.shtml 377,212,385,219 Dragon's Den
+/pokearth/johto/mt.silver.shtml 399,261,407,269 Mt Silver
+/pokearth/johto/safarizone.shtml 237,274,245,282 Safari Zone
+/pokearth/johto/battlefrontier.shtml 250,232,258,240 Battle Frontier
+/pokearth/johto/sinjohruins.shtml 362,26,370,34 Sinjoh Ruins
+/pokearth/johto/route29.shtml 354,289,385,299 Route 29
+/pokearth/johto/route30.shtml 345,249,355,290 Route 30
+/pokearth/johto/route31.shtml 338,240,356,250 Route 31
+/pokearth/johto/route32.shtml 329,249,339,310 Route 32
+/pokearth/johto/route33.shtml 319,309,330,319 Route 33
+/pokearth/johto/route34.shtml 292,284,302,310 Route 34
+/pokearth/johto/route35.shtml 292,249,302,269 Route 35
+/pokearth/johto/route36.shtml 301,240,330,250 Route 36
+/pokearth/johto/route37.shtml 310,236,320,241 Route 37
+/pokearth/johto/route38.shtml 265,220,306,230 Route 38
+/pokearth/johto/route39.shtml 265,230,275,234 Route 39
+/pokearth/johto/route40.shtml 257,242,267,267 Route 40
+/pokearth/johto/route41.shtml 257,267,267,286 Route 41
+/pokearth/johto/route42.shtml 321,220,349,230 Route 42
+/pokearth/johto/route43.shtml 348,196,358,221 Route 43
+/pokearth/johto/route44.shtml 357,220,377,230 Route 44
+/pokearth/johto/route45.shtml 376,229,386,270 Route 45
+/pokearth/johto/route46.shtml 370,259,380,290 Route 46
+/pokearth/johto/route47.shtml 236,285,248,292 Route 47
+/pokearth/johto/route48.shtml 236,281,246,286 Route 48
+/pokearth/kanto/pallettown.shtml 447,285,455,293 Pallet Town
+/pokearth/kanto/viridiancity.shtml 447,258,455,273 Viridian City
+/pokearth/kanto/viridianforest.shtml 447,245,455,253 Viridian Forest
+/pokearth/kanto/pewtercity.shtml 447,229,455,244 Pewter City
+/pokearth/kanto/pewtercity.shtml 447,229,462,237 Pewter City
+/pokearth/kanto/mt.moon.shtml 487,221,495,229 Mt Moon
+/pokearth/kanto/ceruleancity.shtml 527,221,535,229 Cerulean City
+/pokearth/kanto/rocktunnel.shtml 559,221,567,229 Rock Tunnel
+/pokearth/kanto/powerplant.shtml 559,231,567,239 Power Plant
+/pokearth/kanto/lavendertown.shtml 559,245,567,253 Lavender Town
+/pokearth/kanto/pokemontower.shtml 568,255,576,263 Pokémon Tower
+/pokearth/kanto/saffroncity.shtml 523,243,538,258 Saffron City
+/pokearth/kanto/celadoncity.shtml 503,245,511,253 Celadon City
+/pokearth/kanto/vermilioncity.shtml 527,269,535,277 Vermilion City
+/pokearth/kanto/diglett'scave.shtml 535,269,541,277 Diglett's Cave
+/pokearth/kanto/fuchsiacity.shtml 511,293,519,301 Fuchsia City
+/pokearth/kanto/seafoamislands.shtml 474,309,487,316 Seafoam Islands
+/pokearth/kanto/cinnabarisland.shtml 447,309,455,317 Cinnabar Island
+/pokearth/kanto/victoryroad.shtml 422,229,429,237 Victory Road
+/pokearth/kanto/indigoplateau.shtml 422,220,430,228 Indigo Plateau
+/pokearth/kanto/tohjofalls.shtml 401,290,409,298 Tohjo Falls
+/pokearth/kanto/route1.shtml 446,273,456,285 Route 1
+/pokearth/kanto/route2.shtml 446,244,456,258 Route 2
+/pokearth/kanto/route3.shtml 462,228,488,238 Route 3
+/pokearth/kanto/route4.shtml 478,220,527,230 Route 4
+/pokearth/kanto/route5.shtml 526,229,536,243 Route 5
+/pokearth/kanto/route6.shtml 526,258,536,269 Route 6
+/pokearth/kanto/route8.shtml 538,244,559,254 Route 7
+/pokearth/kanto/route7.shtml 511,244,523,254 Route 8
+/pokearth/kanto/route9.shtml 535,220,568,230 Route 9
+/pokearth/kanto/route10.shtml 558,230,568,245 Route 10
+/pokearth/kanto/route11.shtml 543,268,559,278 Route 11
+/pokearth/kanto/route12.shtml 558,253,568,285 Route 12
+/pokearth/kanto/route13.shtml 542,284,568,294 Route 13
+/pokearth/kanto/route14.shtml 534,283,544,302 Route 14
+/pokearth/kanto/route15.shtml 519,292,534,302 Route 15
+/pokearth/kanto/route16.shtml 470,244,503,254 Route 16
+/pokearth/kanto/route17.shtml 470,254,480,293 Route 17
+/pokearth/kanto/route18.shtml 470,292,511,302 Route 18
+/pokearth/kanto/route19.shtml 510,301,520,318 Route 19
+/pokearth/kanto/route20.shtml 455,308,511,318 Route 20
+/pokearth/kanto/route21.shtml 446,293,456,309 Route 21
+/pokearth/kanto/route22.shtml 420,260,447,270 Route 22
+/pokearth/kanto/route23.shtml 421,237,431,261 Route 23
+/pokearth/kanto/route24.shtml 526,204,536,221 Route 24
+/pokearth/kanto/route25.shtml 536,204,553,214 Route 25
+/pokearth/kanto/route26.shtml 422,269,432,299 Route 26
+/pokearth/kanto/route27.shtml 392,269,422,299 Route 27
+/pokearth/kanto/route28.shtml 407,260,423,270 Route 28
+/pokearth/oblivia/daybreakruins.shtml 833,344,841,352 Mitonga Island - Daybreak Ruins
+/pokearth/oblivia/southernbeach.shtml 665,447,673,454 Dolce Island - Southern Beach
+/pokearth/oblivia/hill.shtml 665,439,673,445 Dolce Island - Hill
+/pokearth/oblivia/easternbeach.shtml 673,439,681,445 Dolce Island - Eastern Beach
+/pokearth/oblivia/coconavillage.shtml 697,398,706,414 Renbow Island - Cocona Village
+/pokearth/oblivia/teakwoodforest.shtml 665,398,697,406 Renbow Island - Teakwood Forest
+/pokearth/oblivia/raspcavern.shtml 665,390,673,398 Renbow Island - Rasp Cavern
+/pokearth/oblivia/laprasbeach.shtml 704,406,737,414 Renbow Island - Lapras Beach
+/pokearth/oblivia/curlbay.shtml 729,390,737,406 Renbow Island - Curl Bay
+/pokearth/oblivia/rand'shouse.shtml 729,382,737,390 Renbow Island - Rand's House
+/pokearth/oblivia/latolatotrail.shtml 713,382,729,390 Renbow Island - Latolato Trail
+/pokearth/oblivia/latolatotrail.shtml 713,365,721,382 Renbow Island - Latolato Trail
+/pokearth/oblivia/mt.latolato.shtml 681,358,721,366 Renbow Island - Mt. Latolato
+/pokearth/oblivia/wirelesstower.shtml 673,358,681,366 Renbow Island - Wireless Tower
+/pokearth/oblivia/hindercape.shtml 721,366,737,374 Renbow Island - Hinder Cape
+/pokearth/oblivia/hindercape.shtml 729,350,737,366 Renbow Island - Hinder Cape
+/pokearth/oblivia/bigbookerbridge.shtml 737,350,801,358 Renbow Island - Big Booker Bridge
+/pokearth/oblivia/coralsea.shtml 713,414,721,430 Offshore Renbow Island - Coral Sea
+/pokearth/oblivia/tiltvillage.shtml 801,350,809,358 Mitonga Island - Tilt Village
+/pokearth/oblivia/mitongaroad.shtml 809,333,817,358 Mitonga Island - Mitonga Road
+/pokearth/oblivia/mitongaroad.shtml 816,334,833,342 Mitonga Island - Mitonga Road
+/pokearth/oblivia/mitongaroad.shtml 833,326,849,342 Mitonga Island - Mitonga Road
+/pokearth/oblivia/noiaforest.shtml 817,318,825,326 Mitonga Island - Noir Forest
+/pokearth/oblivia/oldmansion.shtml 809,318,817,334 Mitonga Island - Old Mansion
+/pokearth/oblivia/dangerouscliff.shtml 817,350,873,358 Mitonga Island - Dangerous Cliff
+/pokearth/oblivia/falderavolcano.shtml 804,416,812,424 Faldera Island - Faldera Volcano
+/pokearth/oblivia/aquaresort.shtml 769,278,777,286 Sophian Island - Aqua Resort
+/pokearth/oblivia/sophianroad.shtml 721,278,769,286 Sophian Island - Sophian Road
+/pokearth/oblivia/sophianroad.shtml 769,254,777,278 Sophian Island - Sophian Road
+/pokearth/oblivia/canalruins.shtml 729,286,737,294 Sophian Island - Canal Ruins
+/pokearth/oblivia/mtsorbet.shtml 769,246,777,254 Sophian Island - Mt Sorbet
+/pokearth/oblivia/silverfalls.shtml 713,261,721,286 Sophian Island - Silver Falls
+/pokearth/oblivia/obliviaruins.shtml 713,254,721,262 Sophian Island - Oblivia Ruins
+/pokearth/oblivia/tilikulemonument.shtml 645,273,653,281 Tilikule Island - Tilikule Monument
+/pokearth/oblivia/mt.layuda.shtml 641,307,649,315 Layuda Island - Mt Layuda
+/pokearth/oblivia/underseacavern.shtml 855,254,863,262 Eastern Sea - Undersea Cavern
+/pokearth/oblivia/rainbowdais.shtml 609,366,617,374 Western Sea - Rainbow Dais
+/pokearth/oblivia/skyfortress.shtml 735,323,743,331 Oblivia Region - Sky Fortress
+/pokearth/hoenn/farawayisland.shtml 0,839,14,850 Faraway Island
