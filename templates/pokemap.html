@@ -109,6 +109,17 @@
                 firebase.database().ref().child("sessions/" + user.uid + "/" + counter).update({
                   "score": Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
                 });
+                var parenttbl = document.getElementById(counter.toString());
+                var newel = document.createElement('td');
+                var newel2 = document.createElement('td');
+                newel.innerHTML = counter
+                newel2.innerHTML = Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+                parenttbl.appendChild(newel);
+                parenttbl.appendChild(newel2);
+
+                total_score = Number(document.getElementById("total_score").innerText);
+                total_score += Math.max(Math.floor(200-Math.sqrt(Math.pow(gx-ex,2)+Math.pow(gy-ey,2))),0)
+                document.getElementById("total_score").innerText = total_score
               });
               if (initApp(true) < 5) {
                 initApp(false);
@@ -122,13 +133,14 @@
                       var json = childSnapshot.val();
                       var score = json.score;
                       total += score;
-                      console.log(score)
-                      console.log(total)
                       firebase.database().ref().child("sessions/" + user.uid).update({
                         "total_score": total
                       });
                     });
                   });
+                  initApp(false);
+                  var img = document.getElementById("draggable");
+                  img.parentNode.removeChild(img);
               }
             }
             else {
@@ -156,29 +168,19 @@
           <th style="font-size: 30px; font-weight: bold;">Round:</th>
           <th style="font-size: 30px; font-weight: bold;">Score:</th>
         </tr>
-        <tr height="38px">
-          <td>Jill</td>
-          <td>Smith</td>
+        <tr id="1" height="38px">
         </tr>
-        <tr height="38px">
-          <td>Eve</td>
-          <td>Jackson</td>
+        <tr id="2" height="38px">
         </tr>
-        <tr height="38px">
-          <td>John</td>
-          <td>Doe</td>
+        <tr id="3" height="38px">
         </tr>
-        <tr height="38px">
-          <td>John</td>
-          <td>Doe</td>
+        <tr id="4" height="38px">
         </tr>
-        <tr height="38px">
-          <td>John</td>
-          <td>Doe</td>
+        <tr id="5" height="38px">
         </tr>
-        <tr height="38px">
+        <tr id="6" height="38px">
           <td style="font-size: 30px; font-weight: bold;">Final Score:</td>
-          <td style="color: rgb(231,76,60); font-weight: bold;">Doe</td>
+          <td id="total_score" style="color: rgb(231,76,60); font-weight: bold;">0</td>
         </tr>
       </table>
     </span></div>
