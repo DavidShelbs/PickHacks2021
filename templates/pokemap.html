@@ -77,11 +77,7 @@
         '../static/media/Route_110.mp3',
         '../static/media/Route_205.mp3'
       ]);
-
-
-
-      // var audio = new Audio('../static/media/Route_29.mp3');
-      // audio.play();     
+   
     </script>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
@@ -210,15 +206,16 @@
   </div>
 
   <div class="slidecontainer">
-    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 24%;">
+    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; margin-top: 27%;">
+    <h1 style="z-index:3; position: absolute; margin-top: 24%; margin-left: 8%;">Difficulty</h1>
   </div>
 
 
+  <img src="../static/img/gameboy.png" style="z-index:1; height: 90%; width: 31.5%; margin: 20px; margin-left: 60px; position: absolute; background-repeat: no-repeat; 
+    background-size: 100% 100%; border-radius:25px">
 
-<!-- <button onclick="location.href='/'">BUTTSBUTTSBUTTSBUTTSBUTTSBUTTSBUTTSBUTTS</button> -->
 
-
-  <div style="z-index:2; height: 90%; width: 31.5%; margin: 20px; margin-left: 60px; position: absolute; background-image: url('../static/img/gameboy.png'); background-repeat: no-repeat;
+  <div style="z-index:2; height: 90%; width: 31.5%; margin: 20px; margin-left: 60px; position: absolute; background: transparent; 
   background-size: 100% 100%; border-radius:25px"><span>
     <div style="z-index:4; height: 340px; width: 525px; margin: 20px; margin-left: 5%; margin-top: 13.8%; position: absolute; background-color: transparent; border-radius:10px"><span>
       <table style="width: 70%; text-align: center; font-family: sans-serif; font-size: large; margin-top: 11%; margin-left: 12%">
@@ -242,24 +239,24 @@
         </tr>
       </table>
     </span></div>
-    <div style="margin-top: 65%; margin-left: 12%">
-      <h1>Difficulty:</h1>
-    </div>
     <div>
 
   <div class="row">
     <div class="column">
-      <div type="button" style="position: relative; margin-top: 80%; margin-left: 15%;" onclick="location.href='/'" VALUE="Refresh">
-        <a class="btn red">&nbsp Main Menu &nbsp</a>
-      </div>
-    </div>
-    <div class="column">
-      <div type="button" style="position: relative; margin-top: 80%; margin-left: 35%;" onClick="history.go(0)" VALUE="Refresh">
-        <a class="btn red">&nbsp&nbsp&nbsp&nbsp Restart  &nbsp&nbsp&nbsp&nbsp</a>
-      </div>
+      <button style="  background-color: rgb(166,4,89); border: none; color: white; padding: 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 50%; margin-left: 159%; margin-top: 182%;" onclick="history.go(0)" VALUE="Refresh">
+        &nbsp&nbsp&nbsp&nbsp
+      </button>
+      <button style="  background-color: rgb(166,4,89); border: none; color: white; padding: 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 50%; margin-left: 129%; margin-top: -10%" onclick="location.href='/'" VALUE="Refresh">
+        &nbsp&nbsp&nbsp&nbsp
+      </button>
     </div>
 </div>
-
+<div style="z-index: 6">
+  <p style="color: black; font-weight: bold; margin-top: -9%; font-size: 20px; margin-left: 71%;">Restart</p>
+</div>
+<div style="z-index: 6">
+  <p style="color: black; font-weight: bold; margin-top: -4%; font-size: 20px; margin-left: 40%;">Main Menu</p>
+</div>
 
   <map name="pokearth">
     <area href="#" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokemon HQ Laboratory" onclick="calculateDistance(pkmhhqlab)" id="pkmhhqlab">
@@ -655,6 +652,7 @@
 
     <area href="#" target="_parent" shape="rect" coords="0, 839, 14, 850" title="Faraway Island" onclick="calculateDistance(farawayisland)" id="farawayisland">
     </map>
+
 
     <script>
 
