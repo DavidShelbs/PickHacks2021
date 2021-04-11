@@ -6,10 +6,39 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="static/css/leaderboards.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./css/OverlayMenu.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./css/templatemo-style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='./css/fontPokemonSolid.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="static/js/main.js"></script>
 	<title>PokeGuessr Statistics</title>
 </head>
 
 <body>
+  <nav>
+    <div class="menu-icon">
+      <span></span>
+    </div>
+  </nav>
+  <section class="overlay-menu">
+    <div class="container">
+      <div class="row">
+        <div class="main-menu">
+            <ul>
+                <li>
+                    <button onclick="location.href='leaderboards.html'", style="font-family: fontPokemonSolid; border:1px solid black; background-color: transparent; color: white; padding: 10px 10px;">Leaderboards</button>
+                </li>
+                <li>
+                    <button onclick="location.href='/'", style="font-family: fontPokemonSolid; border:1px solid black; background-color: transparent; color: white; padding: 10px 10px;">Main Menu</button>
+                </li>
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="leaderboard">
     <h1>
       <svg class="ico-cup">
