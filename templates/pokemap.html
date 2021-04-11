@@ -2,15 +2,20 @@
 <html>
   <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/pokemap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/restart.css') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Draggable - Default functionality</title>
-    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script type="text/javascript" src="static/js/google_auth.js"></script>
+    <script type="text/javascript" src="static/js/restart.js"></script>
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <style>
+      #draggable { width: 0px; height: 0; padding: -1em; }
+    </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -22,6 +27,7 @@
   <body>
     <div id="container">
       <img src="static/img/pokearth.png" alt="Pokearth" usemap="#pokearth" style="z-index: 1;">
+    </div>
     <div id="draggable" class="ui-widget-content">
     <script>
 			const config = {
@@ -65,7 +71,7 @@
 										i++;
 								});
 								var ref = firebase.database().ref('image_locs');
-								ref.once('value').then(function(snapshot) {
+								ref.once('value').then(function(snapshot) {/
 										snapshot.forEach(function(childSnapshot) {
 											if (childSnapshot.key == title){
 												var coords = childSnapshot.val();
@@ -109,16 +115,56 @@
 			}
 		</script>
   </div>
-</div>
-
 
   <div class="slidecontainer">
-    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 20%;">
+    <input type="range" min="1" max="51" value="0" id="myRange" step="25" style="z-index:3; position: absolute; padding-top: 25%;">
   </div>
+   
 
-  <div style="z-index:2; height: 84%; width: 26%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); padding: 50px; margin: 20px; margin-left: 60px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span></span></div>
 
-  <div style="z-index:4; height: 150px; width: 423px; padding: 50px; margin: 20px; margin-left: 89px; margin-top: 80px; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span></span></div>
+
+  <div style="z-index:2; height: 90%; width: 31.5%; box-shadow: -6px -6px 10px rgba(18, 155, 177, 0.4), 6px 6px 10px rgba(0, 0, 0, 0.2); margin: 20px; margin-left: 60px; position: absolute; background-color: rgba(125,194,61,1); border-radius:10px"><span>
+    <button style="border-color: transparent; background: transparent; margin-top: -4%" onclick="location.href='main_index.html'"><p style="color: #000;"><i class="arrow left"></i>&nbsp Main Menu &nbsp<i class="arrow left"></i></p></button>
+    <div style="z-index:4; height: 300px; width: 525px; margin: 20px; margin-left: 5%; margin-top: 1%; position: absolute; background-color: rgb(247,194,108); border-radius:10px"><span>
+      <table style="width: 90%; text-align: center;">
+        <tr>
+          <th>Round:</th>
+          <th>Score</th> 
+        </tr>
+        <tr">
+          <td>Jill</td>
+          <td>Smith</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+        </tr>
+        <tr>
+          <td>Final Score:</td>
+          <td>Doe</td>
+        </tr>
+      </table>
+    </span></div>
+    <div style="margin-top: 60%; margin-left: 12%">
+      <h1>Difficulty:</h1>
+    </div>
+    <div type="button" style="position: absolute; margin-top: 20%; margin-left: 38%;">
+      <a class="btn red">&nbsp Restart &nbsp</a>
+    </div>
+  </span></div>
+
 
   <map name="pokearth">
     <area href="#" target="_parent" shape="rect" coords="19, 67, 27, 74" title="Pokemon HQ Laboratory" onclick="calculateDistance(pkmhhqlab)" id="pkmhhqlab">
@@ -372,7 +418,7 @@
     <area href="#" target="_parent" shape="rect" coords="450, 779, 460, 789" title="Canyon Entrance" onclick="calculateDistance(canyonentrance)" id="canyonentrance">
     <area href="#" target="_parent" shape="rect" coords="458, 779, 468, 804" title="Sevault Canyon" onclick="calculateDistance(sevaultcanyon)" id="sevaultcanyon">
     <area href="#" target="_parent" shape="rect" coords="434, 803, 492, 813" title="Tanoby Ruins" onclick="calculateDistance(tanobyruins)" id="tanobyruins">
-    <area href="#" target="_parent" shape="rect" coords="550, 805, 568, 824" title="Birth Island" onclick="calculateDistance(birthisland)" id="birthisland>
+    <area href="#" target="_parent" shape="rect" coords="550, 805, 568, 824" title="Birth Island" onclick="calculateDistance(birthisland)" id="birthisland">
 
     <area href="#" target="_parent" shape="rect" coords="384, 290, 392, 298" title="New Bark Town" onclick="calculateDistance(newbarktown)" id="newbarktown">
     <area href="#" target="_parent" shape="rect" coords="346, 290, 354, 298" title="Cherrygrove City" onclick="calculateDistance(cherrygrovecity)" id="cherrygrovecity">
